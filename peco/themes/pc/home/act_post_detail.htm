@@ -1,0 +1,98 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>      
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope="" class='truncate'><strong itemprop="title">{$article.title}</strong></li>
+    </ul>
+  </div>
+</section>
+{if $mode eq "preview"}
+<div class="preview">
+  <p style="text-align:center">プレビュー画面です。この画面はこのまとめのキュレーターだけが見ることができます。 「<a href="{$clsRewrite->url_addId($article.id)}" class="color-red">編集を続行</a>」</p>
+</div>
+{/if}
+<div id="wrap_post_header" class="clearfix">
+<div class="inner1000 magT20 clearfix">
+	<div id="post_header">
+		{if $article.thumbnail_path ne ""}
+		<div class="post_thumb">
+			<img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt=""/>
+		</div>
+		{/if}
+		<div class="post_title_lead">
+			<h1 itemprop="name" class="magT0">{$article.title}</h1>
+			<p class="pLead">{$article.detail}</p>
+			<a href="#" class="author"><img src="{$URL_IMAGES}/thumb1.jpg" class="small_avatar"> {$article.username}</a>
+			<span class="post_date">更新日： {$article.published_at|date_format:"%Y.%m.%d"}</span>	
+			<ul class="share">
+	          <li style="width:106px">
+	            <a href="https://twitter.com/share" class="twitter-share-button" data-url="" data-text="" data-lang="ja" data-related="peco"></a>
+	          </li>
+	          <li>
+	            <div class="fb-like" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
+	          </li>
+	          <li>
+				<div class="g-plusone"></div>
+	          </li>
+	        </ul>
+		</div>
+		<div class="post_stats">
+			<ul>
+				<li><img src="{$URL_IMAGES}/icon-star-red.png" width="16"> <b id='favorite_num_{$article_id}'>{$article.favorite_num|default:'0'}</b><br>お気に入り</li>
+				<li><b>{$article.page_view|default:'0'}</b><br>VIEW</li>
+			</ul>
+			<a class="btn-primary-like btn-large magB10" onclick="return addFavorites({$article.id});"><i class='icon icon-star'></i>お気に入りに追加</a>
+		</div>
+	</div>
+</div>
+</div>
+<div id="wrap" class="clearfix">
+<div class="inner1000 clearfix" id="article">
+	<div id="main" class="magT20">
+		{$contentItems}
+		
+		<div id="relatedArticles">
+	        <h2>関連まとめ</h2>
+			<!--Begin Post Listing-->
+			<div class="post_list magT10" id="related_list">
+					{foreach key=k item=related_article from=$arrListRelatedArticles}
+					<!--Begin One Post-->
+					<div class="one_post clearfix">
+						<div class="thumb"><a href="{$clsRewrite->url_postdetail($related_article.id)}"><img src="{if $related_article.thumbnail_path ne ''}{$URL_ARTICLES}/{$related_article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/></a></div>
+						<div class="text">
+							<p class="post_title clearfix"><a href="{$clsRewrite->url_postdetail($related_article.id)}">{$related_article.title}</a></p>
+							<span class="flLeft">by {$related_article.username}</span><span class="flRight clearfix"><b>{$related_article.page_view|default:'0'}</b> view</span>
+						</div>
+					</div>
+					<!--End One Post-->
+					{/foreach}
+			</div>
+			<!--End Post Listing-->	        
+	    </div>
+	</div>
+	<div id="sidebar">
+		{if $article.created_by==$core->_USER.id}
+		<div class="magT20">
+		 <a href="{$clsRewrite->url_addId($article.id)}" class="color-red"><img src="{$URL_IMAGES}/btn_edit_post.png"></a>
+		</div>
+		{/if}
+		{include file="_sidebar.htm"}
+	</div>
+</div>
+</div>
+
+
+{literal}
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&appId=1014962838531063&version=v2.0";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script src="https://apis.google.com/js/platform.js" async defer>
+  {lang: 'ja'}
+</script>
+{/literal}

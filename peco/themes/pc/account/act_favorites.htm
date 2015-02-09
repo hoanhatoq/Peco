@@ -1,0 +1,53 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$clsRewrite->url_mypage()}"><span itemprop="title">{$core->_USER.name}</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">マイページ</strong></li>
+    </ul>
+  </div>
+	{assign var=current_user_name value=$core->_USER.name}
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix">
+		<div id="main">
+			<!--Begin main-->
+			<div class="userdata clearfix">
+				<img class="avatar" src="{if $core->_USER.icon ne ""}{$URL_ICON}/{$core->_USER.icon}{else}{$URL_IMAGES}/noimage_person.png{/if}" alt="Avatar">
+				<h1 class="account_name">{$core->_USER.name}</h1>
+				<ul class="stats_data clearfix">
+          <li class="view">閲覧数：<span>4</span></li>
+          <li class="like">お気に入られ数：<span>0</span></li>
+        </ul>
+				<p class="link_setting">
+				<a href="{$clsRewrite->url_setting()}">&raquo; プロフィールを編集する</a>
+				</p>
+			</div>
+			<ul class="tab-common">
+				<li class=""><a href="{$clsRewrite->url_mypage()}"><span>まとめ</span><span class="badge-num">10</span></a></li>
+				<li class="active"><a href="{$clsRewrite->url_favorites($current_user_name)}"><span>お気に入り</span><span class="badge-num">0</span></a></li>
+			</ul>
+			<div id="favorties_post_list">
+				<!--Begin Post Listing-->
+				<div class="post_list">
+				{foreach key=k item=article from=$arrListArticles}
+						<!--Begin One Post-->
+						<div class="one_post clearfix">
+							<div class="thumb"><a href="{$clsRewrite->url_addID($article.id)}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/></a></div>
+							<div class="text">
+								<p class="post_title clearfix"><a href="{$clsRewrite->url_addID($article.id)}">{$article.title|default:"タイトルを入力してください (下書き)"}</a></p>
+								<span class="flLeft">by {$article.username}</span><span class="flRight clearfix"><b>{$article.page_view|default:'0'}</b> view</span>
+							</div>
+						</div>
+						<!--End One Post-->
+				{/foreach}
+				</div>
+				<!--End Post Listing-->
+			</div>
+			<!--End main-->
+		</div>
+		<div id="sidebar">
+			{include file="_sidebar.htm"}
+		</div>
+	</div>
+</div>

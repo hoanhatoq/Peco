@@ -1,0 +1,22 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>      
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">トピック一覧</strong></li>
+    </ul>
+  </div>
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix ">
+	<!--Begin content-->
+		<div id="contentstatic">
+		<h1>トピック一覧</h1>
+		<ul class="other_keyword_list clearfix">
+		{foreach key=k item=topic from=$arrListTopics}
+		<li class="tag"><a href="{$clsRewrite->url_topic($topic)}">{$topic.name} ({$topic.total_article})</a></li>
+		{/foreach}
+		</ul>
+		</div>
+	<!--End content-->
+	</div>
+</div>

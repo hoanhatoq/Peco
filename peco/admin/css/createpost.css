@@ -1,0 +1,2245 @@
+.clearfix { *zoom: 1; }
+.clearfix:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.magB10{ margin-bottom:10px; }
+
+ul li {
+	list-style: none;
+}
+
+/* Wrap
+------------------------------------------------------------ */
+#wrap {
+	/*border-top:1px solid #dddddd;*/
+	margin: 0 auto 100px;
+	width: 100%;
+	position:relative;
+	min-height:400px;
+}
+	#wrap .inner1000{
+		position:relative;
+	}
+	
+#edit_nav{
+	/* background: #f5f5f5; */
+	border-bottom: 1px solid #dddddd;
+	position: relative;
+	width: 100%;
+	z-index: 900;
+	top:0px;
+}
+#edit_nav .inner1000{
+	padding: 5px 0;
+	position: relative;
+}
+	#edit_nav .edit_title{
+		float:left;
+	}
+		#edit_nav .edit_title .btn{
+			display: block;
+			float: left;
+			font-size: 14px;
+			margin: 0 0 0 0px;
+			padding: 8px 20px 7px;
+			color:#000000 !important;
+			cursor:default;
+			width:160px;
+		}
+	#edit_nav .edit_group_btn{
+		float:right;
+	}
+	#edit_nav .edit_group_btn .btn {
+    display: block;
+    float: right;
+    font-size: 14px;
+    margin: 0 0 0 5px;
+    padding: 8px 0 7px;
+    width: 110px;
+	}
+#edit_article_info{
+   margin: 20px auto 0;
+   padding: 10px;
+}
+.edit_thumb {
+	display: block;
+	float: left;
+	position: relative;
+	width: 160px;
+	height:160px;
+	overflow: hidden;
+}
+	.edit_thumb > div{
+		position:absolute;
+		width:160px;
+		height: 160px;
+		text-align:center;
+	}
+.edit_text {
+	float: left;
+	position: relative;
+	width: 825px;
+	padding-left: 20px;
+}
+	.edit_text #list_title {
+		font-size: 20px;
+		padding: 10px;
+	}
+	.edit_text input {
+		display: block;
+		width: 100%;
+	}
+	.edit_text #list_description {
+		font-size: 14px;
+		height: 100px;
+		margin-top: 15px;
+		padding: 10px;
+		width: 100%;
+	}
+	.edit_text .desc_count {
+		color: #555;
+		font-size: 12px;
+		margin-top: 5px;
+		position: absolute;
+		right: 0px;
+	}
+#edit_thumb_area {
+	margin: 10px auto 0;
+	padding-left: 10px;
+}
+#edit_thumb_area #img_from_url {
+	float: left;
+	width: 250px;
+}
+#edit_thumb_area .image_remote_url {
+	font-size: 13px;
+	padding: 5px;
+	width: 250px;
+}
+
+
+.change_thumb_up {
+	margin: 10px 0 10px;
+	padding-left: 15px;
+	background: url(../images/icon_search.png) left 2px no-repeat;
+	font-size: 12px;
+	display:block;
+	padding-bottom:5px;
+	font-size:12px;
+}
+
+.change_thumb_up a{
+	text-decoration: none;
+	color: #333333;
+}
+
+#edit_wrapper{
+	margin: 0 auto;
+	min-height: 500px;
+	padding-top: 20px;
+	padding-left: 10px;
+}
+#addArea{
+	/*border-top:3px solid #e94b24;
+	border-bottom: 2px solid #dddddd;
+	border:2px solid #e94b24;*/
+	background:#eae7e0;
+	padding:10px;
+	line-height:36px;
+	height:36px;
+	font-size:14px;
+	width:700px;
+}
+
+	#addArea ul {
+		border-radius:3px;
+		list-style: none;
+		margin:0px auto;
+		width:100%;
+	}
+	#addArea ul li {
+		display:inline-block;
+		float: left;
+		margin:0px -1px 0px 0px;
+		border:1px solid #e94b24;
+		padding-right:0px;
+		width:13.99%;
+		text-align:center;
+	}
+	
+	#addArea ul li.t {
+		margin: 0px 50px 0px 10px;
+		font-weight: bold;
+	}
+	
+	#addArea ul li a {
+		background:#f3d1c1;
+		display: block;
+		padding: 0px 15px;
+		color:#e94b24;
+	}
+	
+	#addArea ul li a:hover, #addArea ul li a.current {
+		background:#e8baa5;
+		display: block;
+		color: #e94b24;
+		text-decoration: none;
+	}
+	
+/* Input&Buttons & Validate
+------------------------------------------------------------ */
+input[type="text"], input[type="email"], input[type="password"], textarea {
+	border: 1px solid #ddd;
+	box-sizing: border-box;
+	color: #333;
+	display: inline-block;
+	margin: 0;
+	position: relative;
+	vertical-align: middle;
+}
+input[type="checkbox"], input[type="radio"] {
+	box-sizing: border-box;
+	padding: 0;
+}
+
+
+.btn {
+	border-radius: 3px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+.btn_red {
+	background: #e94b24;
+	border: 0 none;
+	color: #fff !important;
+	position: relative;
+}
+	.btn_red:hover{
+		background:#e74c3c;
+	}
+.btn_black {
+	background: #666666;
+	border: 0 none;
+	color: #fff !important;
+	position: relative;
+}
+	.btn_black:hover{
+		background:#999999;
+	}
+.btn_grey {
+	background: #cbcbcb;
+	border: 0 none;
+	color: #fff !important;
+	position: relative;
+}
+.btn_upload_thumb {
+	float: left;
+	font-size: 12px;
+	margin: 0 0 0 5px;
+	padding: 4px 0 !important;
+	width: 70px;
+}
+.btn_default {
+	background: linear-gradient(to bottom, #fff, #f0f0f0) repeat scroll 0 0 rgba(0, 0, 0, 0);
+	border: 1px solid #ddd !important;
+	color: #333 !important;
+	position: relative;
+	text-shadow: 0 1px 1px #fff;
+}
+.btn-large {
+	border-radius: 4px;
+	font-size: 14px;
+	min-width: 200px;
+	padding: 10px 20px;
+}
+.btn-primary-red {
+	background: #e94b24;
+	/*border: 1px solid #e94b24;*/
+	border:0px;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	/*line-height: normal;*/
+	text-align: center;
+}
+	.btn-primary-red:hover {
+		background: #e74c3c;
+		text-decoration:none;
+	}
+	.btn-primary-red.noBG:hover{
+		
+	}
+.btn-primary-grey {
+	background: #f6f6f6;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+	color: #666666;
+	cursor: pointer;
+	display: inline-block;
+	line-height: normal;
+	text-align: center;
+}
+	.btn-primary-grey:hover {
+		background: #f1f1f1;
+		text-decoration:none;
+	}
+.btn-primary-like {
+	background: #FFFFFF;
+	border: 1px solid #dddddd;
+	box-sizing: border-box;
+	color: #666666;
+	cursor: pointer;
+	display: inline-block;
+	line-height: normal;
+	text-align: center;
+}
+	.btn-primary-like:hover {
+		background: #f5f5f5;
+		text-decoration:none;
+	}	
+	.btn-primary-like.noBG:hover{		
+	}
+.btn-signin-facebook{
+	background:#19448e;
+	border: medium none;
+	border-radius: 3px;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 14px;
+	padding: 10px 20px;
+	text-align: center;
+	vertical-align: middle;
+}
+	.btn-signin-facebook:hover{
+		opacity:0.9;
+		text-decoration:none;
+	}
+
+.input-large, .input-medium, .input-small{
+	border: 1px solid #c0c0be;
+	border-radius: 3px;
+	font-size: 14px;
+	padding: 4px;
+	width: 278px;
+}
+.input-large {
+	padding: 7px;
+}
+.input-sign {
+	width: 100%;
+}
+
+.validate_message {
+	display: block;
+	margin: 5px 0 0;
+	padding: 0;
+	background: none;
+	color: #FF0000!important;
+	font-size: 11px;
+	letter-spacing: normal;
+}
+
+/* Dropdowns
+------------------------------------------------------------ */
+#edit_wrapper select {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	position: relative;
+	vertical-align: middle;
+	-moz-appearance: button;
+	-webkit-appearance: button;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	-o-border-radius: 3px;
+	border-radius: 3px;
+	-pie-border-top-left-radius: 3px;
+	-pie-border-top-right-radius: 3px;
+	-pie-border-bottom-right-radius: 3px;
+	-pie-border-bottom-left-radius: 3px;
+	/* behavior: url(/PIE.htc); */
+	width: 200px;
+	height: 30px;
+	padding-left: 8px;
+	padding-right: 30px;
+	line-height: 28px;
+	font-size: 13px;
+	color: #333;
+	background: #fff;
+	border: 1px solid #ddd;
+	cursor: pointer;
+	white-space: nowrap;
+	overflow: hidden;
+	-ms-text-overflow: ellipsis;
+	-o-text-overflow: ellipsis;
+	text-overflow: ellipsis
+}
+
+#edit_wrapper select:disabled {
+	background-color: #ddd
+}
+
+/* Edit Content Area
+------------------------------------------------------------ */
+#contentArea {
+	padding: 15px 0px;
+	width:720px;
+}
+
+.articleContent {
+	/* margin-bottom: 30px; */
+}
+
+.articleContentInner:hover {
+	background-color: rgba(221, 221, 221, 0.5);
+}
+
+.articleTextContent {
+	padding: 10px;
+}
+
+.articleText {
+	line-height: 1.5em;
+}
+
+.editItemBtnList {
+	background-color: rgba(221, 221, 221, 0.5);
+	background: -webkit-gradient(linear, 50% 0, 50% 100%, color-stop(0%, #fafafa),
+		color-stop(100%, #eee));
+	background: -moz-linear-gradient(top, #fafafa, #eee);
+	background: -webkit-linear-gradient(top, #fafafa, #eee);
+	background: linear-gradient(to bottom, #fafafa, #eee);
+	-pie-background: linear-gradient(#fafafa, #eee);
+	visibility: hidden;
+	/* margin-top: 15px; */
+}
+
+.articleContentInner:hover .editItemBtnList {
+	visibility: visible;
+}
+
+.editItemBtns {
+	float: left;
+}
+
+.moveItemBtns {
+	border-right: 1px solid #FFF;
+	float: left;
+}
+
+.editItemBtns li {
+	display: inline-block;
+	float: left;
+	border-right: 1px solid #E7E7E7;
+	border-left: 1px solid #FFF;
+	letter-spacing: normal;
+	vertical-align: middle;
+}
+
+.editItemBtns li .editItem {
+	display: block;
+	height: 25px;
+	margin: 0px;
+	padding: 0px 10px 0px 27px;
+	border: 0px none;
+	color: #333;
+	font-size: 12px;
+	line-height: 25px;
+	text-align: left;
+}
+
+.editItemBtns li button:hover {
+	background-color: #eee;
+	cursor: pointer;
+}
+
+.editItemTop {
+	background: url("../images/item_top.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemUp {
+	background: url("../images/item_up.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemDown {
+	background: url("../images/item_down.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemBottom {
+	background: url("../images/item_bottom.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemEdit {
+	background: url("../images/item_edit.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemRemove {
+	background: url("../images/item_delete.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemMove {
+	display: inline-block;
+	float: right;
+	height: 25px;
+	margin: 0px !important;
+	color: #333;
+	font-size: 12px !important;
+	line-height: 26px !important;
+	letter-spacing: normal;
+	vertical-align: middle;
+}
+
+.editItemMove span {
+	display: block;
+	padding: 0px 10px 0px 27px;
+	border-left: 1px solid #FFF;
+	background: url("../images/item_move.png") no-repeat scroll 8px 6px
+		transparent;
+}
+
+.editItemMove span:hover {
+	background-color: #eee;
+	cursor: move;
+}
+
+.newItem {
+	padding: 15px 10px 15px 10px;
+}
+
+.newItem a{
+	cursor: pointer;
+	position: relative;
+	top: 1px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+
+#contentArea .newItem input[type=text] {
+	display: block;
+	width: 380px;
+	margin-right: 5px;
+	padding: 7px 8px 6px;
+	font-size: 14px;
+	margin-top: 10px
+}
+
+#contentArea .newItem textarea {
+	display: block;
+	width: 690px;
+	margin-bottom: 10px;
+	padding: 8px 10px 6px 10px;
+	font-size: 14px;
+	line-height: 1.4em;
+}
+
+#contentArea .newItem p {
+	margin: 10px 0 10px;
+	padding-left: 15px;
+	background: url(../images/icon_search.png) left 2px no-repeat;
+	font-size: 12px
+}
+
+#contentArea .newItem .btn {
+	width: 100px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 30px
+}
+
+#contentArea .newItem .addItemBtn {
+	position: relative;
+	margin-top: 10px
+}
+/* Heading
+------------------------------------------------------------ */
+.articleHeadingContent {
+	padding: 10px;
+}
+.articleHeading {
+	margin-right: 10px;
+	margin-bottom: 10px;
+	border-bottom: 2px solid #fc7c79;
+	font-size: 20px;
+	font-weight: 700;
+	line-height: 1.4em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.articleHeading span {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	vertical-align: middle;
+	margin-bottom: -10px;
+	padding: 0 5px 12px 0;
+	color: #fc7c79;
+	font-size: 10px;
+	font-weight: 700
+}
+
+.articleSubHeading {
+	padding: 15px 0 0 0px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.4em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+.articleSubHeading span {
+	display: inline-block;
+	vertical-align: middle;
+	*vertical-align: auto;
+	*zoom: 1;
+	*display: inline;
+	vertical-align: middle;
+	margin-bottom: -10px;
+	padding: 0 5px 12px 0;
+	color: #fc7c79;
+	font-size: 10px;
+	font-weight: 700
+}
+
+/* Article Seperator
+------------------------------------------------------------ */
+.articleAddHere {
+	position: relative;
+	height: 40px;
+	z-index: 100;
+}
+
+.articleAddHereBtn {
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	left: -50px;
+	top: 0;
+}
+
+.articleAddHereLine {
+	border-bottom: 2px dashed #e94b24;;
+	padding-top: 20px;
+	display: none;
+}
+
+.articleAddHereView {
+	position: absolute;
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	color: #fff;
+	text-indent: 25px;
+	left: -60px;
+	top: 0;
+	cursor: pointer;
+	font-size: 0.8em;
+}
+
+.articleAddHereView:before {
+	background-image: url(../images/article_add_here.png);
+	background-repeat: no-repeat;
+	-webkit-background-size: 60px 30px;
+	-moz-background-size: 60px 30px;
+	-o-background-size: 60px 30px;
+	background-size: 60px 30px;
+	background-position: 50% 50%;
+	content: '';
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 80px;
+	height: 40px;
+	z-index: -1;
+}
+
+.articleAddHere:hover .articleAddHereLine {
+	display: block;
+}
+
+.articleAddHereCancel {
+	position: absolute;
+	right: -30px;
+	top: 0px;
+	padding: 5px 11px;
+	font-size: 1.2em;
+	-webkit-border-radius: 0 4px 4px 0;
+	-moz-border-radius: 0 4px 4px 0;
+	-ms-border-radius: 0 4px 4px 0;
+	-o-border-radius: 0 4px 4px 0;
+	border-radius: 0 4px 4px 0;
+	background: #eae7e0;
+	z-index: 10;
+	cursor: pointer;
+}
+.articleAddHereArea {
+	padding: 0!important;
+}
+
+.articleAddHereTab {
+	position: relative;
+	width: 100%;
+	padding: 0!important;
+	z-index: 900;
+}
+/* Color Picker
+------------------------------------------------------------ */
+div.color-picker {
+	border-left: 1px solid #000;
+	border-top: 1px solid #000;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	padding: 0px;
+}
+
+div.color-picker ul {
+	list-style: none;
+	padding: 0px;
+	margin: 0px;
+	float: left;
+}
+
+div.color-picker ul li {
+	display: block;
+	width: 15px;
+	height: 15px;
+	border-right: 1px solid #000;
+	border-bottom: 1px solid #000;
+	margin: 0px;
+	float: left;
+	cursor: pointer;
+}
+
+/* Loading
+------------------------------------------------------------ */
+.loading {
+	position: fixed;
+	bottom: 5px;
+	right: 5px;
+	width: 80px;
+	height: 80px;
+	z-index: 9999;
+	background-color: rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+.loading img {
+	display: block;
+	margin: 15px;
+}
+
+/* Image Slider
+------------------------------------------------------------ */
+#slider {
+	position: relative;
+	overflow: hidden;
+}
+
+#slider ul {
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+#slider ul li {
+	position: relative;
+	display: block;
+	float: left;
+	margin: 0;
+	padding: 0;
+	width: 150px;
+	text-align: center;
+}
+
+a.controlPrev, a.controlNext {
+	background: linear-gradient(to bottom, #FFF, #F0F0F0) repeat scroll 0px
+		0px transparent;
+	display: inline-block;
+	width: 20px;
+	border: 1px solid #DDD !important;
+	color: #333 !important;
+	position: relative;
+	text-shadow: 0px 1px 1px #FFF;
+	text-decoration: none;
+	cursor: pointer;
+	border-radius: 3px;
+	box-sizing: border-box;
+	cursor: pointer;
+	font-weight: 700;
+	font-size: 13px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+a.controlPrev:hover, a.controlNext:hover {
+	background: none repeat scroll 0% 0% #F5F5F5;
+}
+
+a.imgURLCheck {
+	width: 100px;
+	height: 30px;
+	font-size: 13px;
+	line-height: 30px;
+	background: linear-gradient(to bottom, #FFF, #F0F0F0) repeat scroll 0px
+		0px transparent;
+	border: 1px solid #DDD !important;
+	color: #333 !important;
+	position: relative;
+	text-shadow: 0px 1px 1px #FFF;
+	border-radius: 3px;
+	box-sizing: border-box;
+	cursor: pointer;
+	display: inline-block;
+	font-weight: 700;
+	position: relative;
+	text-align: center;
+	text-decoration: none;
+	vertical-align: middle;
+}
+
+a.imgURLCheck:hover {
+	background: none repeat scroll 0% 0% #F5F5F5;
+}
+/* addURLCheckTab
+------------------------------------------------------------ */
+#siteTitle {
+	margin-bottom: 5px;
+}
+
+#siteURL {
+	color: #7C94AA;
+	text-decoration: none;
+	font-size: 11px;
+}
+
+#siteDesc {
+	margin-top: 5px;
+}
+
+#siteComment {
+	margin-top: 5px;
+}
+
+.itemThumb {
+	display: block;
+	float: left;
+	position: relative;
+	width: 150px;
+}
+
+.itemText {
+	position: relative;
+	width: 825px;
+	padding-left: 170px;
+}
+
+.itemText a, span {
+	font-size: 12px;
+}
+
+.siteTitleText {
+	font-size: 20px;
+	background-color: #F4F8FA;
+}
+
+.siteTitleText:hover {
+	background-color: #EAF1F6;
+}
+
+/* URL Search PopUp
+------------------------------------------------------------ */
+.urlSearchHeader {
+	background: none repeat scroll 0% 0% #F5F5F5;
+	position: relative;
+	width: 100%;
+	line-height: 50px;
+}
+
+.urlSearchHeader span {
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.urlSearchHeader #urlKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+#btnDialogClose {
+	margin-right: 10px;
+	float: right;
+	margin-top: 13px;
+}
+
+.urlSearchBody {
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.urlSearchBody .urlSearchBodyHead {
+	padding: 15px 10px 10px 10px;
+	position: relative;
+}
+
+.urlSearchBody .urlSearchBodyHeadTextL01 {
+	padding: 5px 0px 10px;
+	border-bottom: 1px solid #D6D6D6;
+	color: #000;
+	font-weight: bold;
+}
+
+.urlSearchBody .urlSearchBodyHeadTextR01 {
+	position: absolute;
+	padding-right: 10px;
+	right: 0px;
+	bottom: 12px;
+	color: #949494;
+	line-height: 2;
+	vertical-align: bottom;
+}
+
+.urlSearchBody .urlSearchPoweredBy {
+	color: #949494;
+	line-height: 2;
+}
+
+/* .urlSearchBody .urlSearchPoweredBy a {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: bottom;
+} */
+.urlSearchBody .urlSearchPoweredByGoogle {
+	bottom: -2px;
+	position: relative;
+}
+
+.urlSearchBody .urlSearchSeparator {
+	margin-right: 12px;
+	height: 11px;
+	margin: 0px 8px;
+	border-left-color: #D2D2D2;
+}
+
+.urlSearchBody .urlSearchCount {
+	line-height: 13px;
+	padding-right: 3px;
+	background-position: 100% 0px;
+	color: #FFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.urlSearchBody .urlSearchCount .urlSearchCountInner {
+	padding-right: 3px;
+	padding-left: 3px;
+	background-position: 0px 0px;
+	display: inline-block;
+	background-image: url("../images/sprite_count.png");
+}
+
+.urlSearchBodyContent {
+	position: relative;
+	overflow-y: auto;
+	height: 500px;
+}
+
+.urlSearchList {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.urlSearchList li {
+	display: block;
+	position: relative;
+	background: none repeat scroll 0% 0% #FFF;
+	margin-bottom: 12px;
+	padding: 7px 59px 7px 7px;
+}
+
+.urlSearchList .urlSearchItemInfo {
+	overflow: hidden;
+}
+
+.urlSearchItem:HOVER {
+	background: none repeat scroll 0% 0% #F5F5F5;
+}
+
+.urlSearchItem:HOVER .urlSearchItemAdd {
+	display: inline-block;
+}
+
+.urlSearchList .urlSearchLink {
+	color: #2468CE;
+}
+
+.urlSearchList .urlSearchLink:VISITED {
+	text-decoration: underline !important;
+}
+
+.urlSearchList .urlSearchItemTitle {
+	font-size: 16px;
+}
+
+.urlSearchList .urlSearchItemDesc {
+	font-size: 12px;
+	margin-top: 7px;
+}
+
+.urlSearchList .urlSearchItemURL {
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.urlSearchList .urlSearchItemURL a {
+	color: #5CB65E;
+}
+
+.urlSearchBodyContent .urlSearchMore {
+	margin-left: 20px;
+}
+
+.urlSearchBodyContent .urlSearchMore .urlSearchMore01 {
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F5F5F5;
+	text-align: center;
+}
+
+.urlSearchBodyContent .urlSearchMore .urlSearchMore01:HOVER {
+	background: none repeat scroll 0% 0% #CBCBCB;
+}
+
+.urlSearchBodyContent .urlSearchMore .urlSearchMore01 .urlSearchMore01Btn {
+	color: #777;
+	width: 100%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.urlSearchBodyContent .urlSearchMoreLoading {
+	display: block;
+	background: url("../images/bg_loading.gif") no-repeat scroll 50% 50%
+		transparent;
+	text-indent: -9999px;
+}
+
+.urlSearchItemAdd {
+	display: none;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+#urlSearchItemAddBtn {
+	font-size: 10px;
+}
+/* .urlSearchItemAddBtn {
+	margin-left:5px;
+    vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0px;
+	border: 0px none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	text-indent: -9999px;
+	
+	background: linear-gradient(to bottom, #FFF, #F0F0F0) repeat scroll 0px 0px transparent;
+	border: 1px solid #DDD !important;
+}  */
+
+/* Article URL
+------------------------------------------------------------ */
+.articleURLItem {
+	position: relative;
+	background: none repeat scroll 0% 0% #FAFAFA;
+	padding: 10px;
+}
+
+.articleContentInner:hover .articleURLItem {
+	background: transparent;
+}
+
+.articleURLItemTitleView {
+	line-height: 1.3;
+	color: #000;
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+.articleURLItemTitleLink {
+	padding: 2px 0px;
+	color: #000;
+}
+
+.articleURLItemUrlView {
+	line-height: 1.2;
+	margin: 3px 0px 0px;
+	font-size: 11px;
+	word-wrap: break-word;
+}
+
+.articleURLItemUrlLink {
+	color: #7C94AA;
+}
+
+.articleURLItemDescView {
+	line-height: 1.4;
+	margin: 3px 0px 0px;
+	color: #AAA;
+}
+
+.articleURLItemThumbView {
+	display: inline-block;
+	position: relative;
+	max-width: 150px;
+	overflow: hidden;
+	margin: 3px 0px 0px;
+	vertical-align: top;
+}
+
+.articleURLItemThumbView img {
+	max-width: 150px;
+	vertical-align: top;
+}
+
+.articleURLItemCommentView {
+	line-height: 1.429;
+	margin: 10px 0px 0px;
+	padding: 0px 0px 0px 6px;
+	border-left: 2px solid #D0D0D0;
+	color: #666;
+	font-size: 14px;
+}
+
+/* Tab Check Twitter URL
+------------------------------------------------------------ */
+.itemTwitterContent {
+	padding: 10px 10px 10px 68px;
+	position: relative;
+}
+
+.itemTwitterUserThumb01 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.itemTwitterUserThumb01View {
+	word-wrap: break-word;
+}
+
+.itemTwitterUserThumb01Img {
+	width: 48px;
+	height: 48px;
+	vertical-align: top;
+}
+
+.itemTwitterUserName01 {
+	position: relative;
+}
+
+.itemTwitterUserName01View {
+	line-height: 1.2;
+	word-wrap: break-word;
+}
+
+.itemTweet01View {
+	line-height: 1.3;
+	margin-top: 4px;
+	color: #333;
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+.itemTweet01Image {
+	margin-top: 10px;
+}
+
+.itemTweetTimeView {
+	color: #aaa;
+}
+
+#itemTweet01ImageView {
+	max-width: 300px;
+}
+.itemComment01Form {
+	margin: 10px 0px 0px;
+}
+
+.itemComment01Input {
+	padding: 0px 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CACED1 #E8EAEB #E8EAEB #CACED1;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	background-color: #FFF;
+	min-height: 53px;
+}
+
+.mdMTMWidget01FormBtn01 {
+	margin: 14px 0px 0px;
+}
+
+.mdMTMWidget01FormBtn01 .MdBtn01Save02 {
+	margin: 0px 10px 0px 0px;
+}
+
+.MdBtn01Save02 .mdBtn01Save02Btn {
+	width: 45px;
+	height: 26px;
+	background-position: 0px -60px;
+	vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0px;
+	border: 0px none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+.MdBtn01Cancel01 .mdBtn01Cancel01Btn {
+	width: 68px;
+	height: 26px;
+	background-position: 0px -30px;
+	vertical-align: middle;
+	cursor: pointer;
+	display: inline-block;
+	overflow: hidden;
+	padding: 0px;
+	border: 0px none;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	text-align: left;
+	text-indent: -9999px;
+}
+
+.itemComment01Inputbox {
+	display: block;
+	width: 690px;
+	margin-bottom: 10px;
+	padding: 8px 0px 6px 10px;
+	font-size: 14px;
+	line-height: 1.4em;
+}
+
+.articleTwitterContent {
+	padding: 10px 10px 10px 68px;
+	position: relative;
+}
+
+.articleTwitterUserThumb01 {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding-left: 10px;
+	padding-top: 10px;
+}
+
+.articleTwitterUserThumb01View {
+	word-wrap: break-word;
+}
+
+.articleTwitterUserThumb01Img {
+	width: 48px;
+	height: 48px;
+	vertical-align: top;
+}
+
+.articleTwitterUserName01 {
+	position: relative;
+}
+
+.articleTwitterUserName01View {
+	line-height: 1.2;
+	word-wrap: break-word;
+}
+
+.articleTweet01View {
+	line-height: 1.3;
+	margin-top: 4px;
+	color: #333;
+	font-size: 20px;
+	word-wrap: break-word;
+}
+
+.articleComment01Form {
+	margin: 10px 0px 0px;
+}
+
+.articleComment01Input {
+	padding: 0px 4px;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #CACED1 #E8EAEB #E8EAEB #CACED1;
+	-moz-border-top-colors: none;
+	-moz-border-right-colors: none;
+	-moz-border-bottom-colors: none;
+	-moz-border-left-colors: none;
+	border-image: none;
+	background-color: #FFF;
+	min-height: 53px;
+}
+
+.articleTwitterCommentView {
+	line-height: 1.429;
+	margin: 10px 0px 0px;
+	padding: 0px 0px 0px 6px;
+	border-left: 2px solid #D0D0D0;
+	color: #666;
+	font-size: 14px;
+}
+
+/* Tweet Search PopUp
+------------------------------------------------------------ */
+.tweetSearchHeader {
+	background: none repeat scroll 0% 0% #F5F5F5;
+	position: relative;
+	width: 100%;
+	line-height: 50px;
+}
+
+.tweetSearchHeader span {
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tweetSearchHeader #tweetKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+#btnTwitterClose {
+	margin-right: 10px;
+	float: right;
+	margin-top: 13px;
+}
+
+.tweetSearchBody {
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.tweetSearchBody .tweetSearchBodyHead {
+	padding: 15px 10px 10px 10px;
+	border-bottom: 1px solid #D6D6D6;
+}
+
+.tweetSearchBody .tweetSearchBodyHeadTextL01 {
+	padding: 5px 0px 10px;
+	color: #000;
+	font-weight: bold;
+}
+
+.tweetSearchBody .tweetSearchBodyHeadTextR01 {
+	color: #949494;
+	line-height: 2;
+	float: right;
+}
+
+.tweetSearchBody .tweetSearchSeparator {
+	margin-right: 12px;
+	height: 11px;
+	margin: 0px 8px;
+	border-left-color: #D2D2D2;
+}
+
+.tweetSearchBody .tweetSearchCount {
+	line-height: 13px;
+	padding-right: 3px;
+	background-position: 100% 0px;
+	color: #FFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.tweetSearchBody .tweetSearchCount .tweetSearchCountInner {
+	padding-right: 3px;
+	padding-left: 3px;
+	background-position: 0px 0px;
+	display: inline-block;
+	background-image: url("../images/sprite_count.png");
+}
+
+.tweetSearchBodyContent {
+	position: relative;
+	overflow-y: auto;
+	height: 500px;
+}
+
+.tweetSearchList {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.tweetSearchList li {
+	display: block;
+	position: relative;
+	background: none repeat scroll 0% 0% #FFF;
+	margin-bottom: 12px;
+	padding: 7px 59px 7px 7px;
+}
+
+.tweetSearchList .tweetSearchItemInfo {
+	overflow: hidden;
+	padding-left: 60px;
+}
+
+.tweetSearchList .tweetSearchItemAvatar {
+	position: absolute;
+}
+
+.tweetSearchItem:HOVER {
+	background: none repeat scroll 0% 0% #F5F5F5;
+}
+
+.tweetSearchItem:HOVER .tweetSearchItemAdd {
+	display: inline-block;
+}
+
+.tweetSearchList .tweetSearchLink {
+	color: #2468CE;
+}
+
+.tweetSearchList .tweetSearchLink:VISITED {
+	text-decoration: underline !important;
+}
+
+.tweetSearchList .tweetSearchItemTitle {
+	font-size: 16px;
+}
+
+.tweetSearchList .tweetSearchItemDesc {
+	font-size: 12px;
+	margin-top: 7px;
+}
+
+.tweetSearchList .tweetSearchItemURL {
+	font-size: 12px;
+	margin-top: 4px;
+}
+
+.tweetSearchList .tweetSearchItemURL a {
+	color: #5CB65E;
+}
+
+.tweetSearchBodyContent .tweetSearchMore {
+	margin-left: 20px;
+}
+
+.tweetSearchBodyContent .tweetSearchMore .tweetSearchMore01 {
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F5F5F5;
+	text-align: center;
+}
+
+.tweetSearchBodyContent .tweetSearchMore .tweetSearchMore01:HOVER {
+	background: none repeat scroll 0% 0% #CBCBCB;
+}
+
+.tweetSearchBodyContent .tweetSearchMore .tweetSearchMore01 .tweetSearchMore01Btn {
+	color: #777;
+	width: 100%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.tweetSearchBodyContent .tweetSearchMoreLoading {
+	display: block;
+	background: url("../images/bg_loading.gif") no-repeat scroll 50% 50%
+		transparent;
+	text-indent: -9999px;
+}
+
+.tweetSearchItemAdd {
+	display: none;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+#tweetSearchItemAddBtn {
+	font-size: 10px;
+}
+
+.tweetSearchCheck {
+	padding-left: 10px;
+	font-size: 12px;
+}
+
+.tweetSearchItemImg {
+	padding-top: 10px;
+}
+
+#tweetExcludeKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+#tweetSearchItemImgView {
+	max-width: 150px;
+}
+/* Tab Add Image
+------------------------------------------------------------ */
+.itemImagePreview {
+	display: block;
+	float: left;
+	width: 300px;
+	margin-right: 15px;
+}
+
+.itemImageCheckArea {
+	
+}
+
+.itemImageUpload, .itemImageLink {
+	cursor: pointer;
+	position: relative;
+	top: 1px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+.itemImageSearch {
+	cursor: pointer;
+	position: relative;
+	top: 1px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+/* Article Image Item
+------------------------------------------------------------ */
+.articleImageItem {
+	padding: 10px;
+}
+
+.articleImage {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 15px;
+	letter-spacing: normal;
+}
+
+.articleImage img {
+	display: block;
+	max-width: 690px;
+	max-height: 690px;
+}
+
+.articleImageSource {
+	margin-top: 5px !important;
+	color: #999;
+	font-size: 11px !important;
+}
+
+.articleImageTitle {
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+.articleImageText {
+	position: relative;
+	overflow: hidden;
+	padding-top: 5px;
+	letter-spacing: normal;
+}
+
+.articleImageDesc {
+	font-size: 14px;
+	line-height: 1.5em;
+	border-left: 2px solid #d0d0d0;
+	color: #666;
+	padding: 0 0 0 6px;
+}
+/* Image Search PopUp
+------------------------------------------------------------ */
+.imageSearchHeader {
+	background: none repeat scroll 0% 0% #F5F5F5;
+	position: relative;
+	width: 100%;
+	line-height: 50px;
+}
+
+.imageSearchHeader span {
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.imageSearchHeader #thumbKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+#btnImageClose {
+	margin-right: 10px;
+	float: right;
+	margin-top: 13px;
+}
+
+.imageSearchBody {
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.imageSearchBody .imageSearchBodyHead {
+	padding: 15px 10px 10px 10px;
+	position: relative;
+}
+
+.imageSearchBody .imageSearchBodyHeadTextL01 {
+	padding: 5px 0px 10px;
+	border-bottom: 1px solid #D6D6D6;
+	color: #000;
+	font-weight: bold;
+}
+
+.imageSearchBody .imageSearchBodyHeadTextR01 {
+	position: absolute;
+	padding-right: 10px;
+	right: 0px;
+	bottom: 12px;
+	color: #949494;
+	line-height: 2;
+	vertical-align: bottom;
+}
+
+.imageSearchBody .imageSearchPoweredBy {
+	color: #949494;
+	line-height: 2;
+}
+
+/* .imageSearchBody .imageSearchPoweredBy a {
+    display: inline-block;
+    text-decoration: none;
+    vertical-align: bottom;
+} */
+.imageSearchBody .imageSearchPoweredByGoogle {
+	bottom: -2px;
+	position: relative;
+}
+
+.imageSearchBody .imageSearchSeparator {
+	margin-right: 12px;
+	vertical-align: bottom;
+	height: 11px;
+	margin: 0px 8px;
+	border-left-color: #D2D2D2;
+}
+
+.imageSearchBody .imageSearchCount {
+	line-height: 13px;
+	padding-right: 3px;
+	background-position: 100% 0px;
+	color: #FFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.imageSearchBody .imageSearchCount .imageSearchCountInner {
+	padding-right: 3px;
+	padding-left: 3px;
+	background-position: 0px 0px;
+	display: inline-block;
+	background-image: url("../images/sprite_count.png");
+}
+
+.imageSearchBodyContent {
+	position: relative;
+	overflow-y: auto;
+	height: 500px;
+	padding-bottom: 10px;
+}
+
+.imageSearchList {
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.imageSearchList li {
+	max-width: 145px;
+	margin: 0 15px 15px 0;
+	float: left;
+	cursor: pointer;
+}
+
+.imageSearchList .imageSearchThumb {
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+
+.imageSearchList .imageSearchBtn {
+	right: 5px;
+	bottom: 5px;
+	display: none;
+	position: absolute;
+}
+
+.imageSearchList .imageSearchAddBtn {
+	display: none;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.imageSearchBodyContent .thumbSearchMore {
+	margin-left: 20px;
+}
+
+.imageSearchBodyContent .thumbSearchMore .imageSearchMore01 {
+	display: inline-block;
+	width: 100%;
+	height: 35px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F5F5F5;
+	text-align: center;
+}
+
+.imageSearchBodyContent .thumbSearchMore .imageSearchMore01:HOVER {
+	background: none repeat scroll 0% 0% #CBCBCB;
+}
+
+.imageSearchBodyContent .thumbSearchMore .imageSearchMore01 .imageSearchMore01Btn {
+	color: #777;
+	width: 100%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.imageSearchBodyContent .imageSearchMoreLoading {
+	display: block;
+	background: url("../images/bg_loading.gif") no-repeat scroll 50% 50%
+		transparent;
+	text-indent: -9999px;
+}
+
+.imageSearchBtn {
+	display: block;
+	position: absolute;
+	top: 7px;
+	right: 7px;
+}
+
+.imageSearchItem:HOVER .imageSearchBtn {
+	display: block;
+}
+
+/* Tab Add Video
+------------------------------------------------------------ */
+.itemVideoThumbDef {
+	display: block;
+	float: left;
+	width: 300px;
+	margin-right: 15px;
+}
+
+.itemVideoSearch {
+	cursor: pointer;
+	position: relative;
+	top: 1px;
+	color: #666;
+	vertical-align: middle;
+	text-decoration: none;
+}
+
+/* Tab Check Video
+------------------------------------------------------------ */
+#videoSource {
+	padding-top: 10px;
+	color: #aaa;
+	font-size: 12px;
+}
+
+#videoSource a {
+	padding-left: 10px; }
+	/* Article Video Item
+------------------------------------------------------------ */
+.articleVideoItem {
+	padding: 10px;
+}
+
+.articleVideo {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 15px;
+	letter-spacing: normal;
+	padding-bottom: 10px;
+}
+
+.articleVideoSource {
+	margin-top: 5px !important;
+	color: #999;
+	font-size: 11px !important;
+}
+
+.articleVideoTitle {
+	font-weight: bold;
+	font-size: 18px;
+	padding-bottom: 10px;
+}
+
+.articleVideoText {
+	position: relative;
+	overflow: hidden;
+	letter-spacing: normal;
+}
+
+.articleVideoDesc {
+	font-size: 14px;
+	line-height: 1.5em;
+	border-left: 2px solid #d0d0d0;
+	color: #666;
+	padding: 0 0 0 6px;
+}
+
+/* Video Search PopUp
+------------------------------------------------------------ */
+.videoSearchHeader {
+	background: none repeat scroll 0% 0% #F5F5F5;
+	position: relative;
+	width: 100%;
+	line-height: 50px;
+}
+
+.videoSearchHeader span {
+	padding-left: 10px;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.videoSearchHeader #imageKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+#btnVideoClose {
+	margin-right: 10px;
+	float: right;
+	margin-top: 13px;
+}
+
+.videoSearchBody {
+	background: none repeat scroll 0% 0% #FFF;
+}
+
+.videoSearchBody .videoSearchBodyHead {
+	padding: 15px 10px 10px 10px;
+	position: relative;
+}
+
+.imageSearchBody .videoSearchBodyHeadTextL01 {
+	padding: 5px 0px 10px;
+	border-bottom: 1px solid #D6D6D6;
+	color: #000;
+	font-weight: bold;
+}
+
+.videoSearchBody .videoSearchBodyHeadTextR01 {
+	position: absolute;
+	padding-right: 10px;
+	right: 0px;
+	bottom: 12px;
+	color: #949494;
+	line-height: 2;
+	vertical-align: bottom;
+}
+
+.videoSearchBody .videoSearchPoweredBy {
+	color: #949494;
+	line-height: 2;
+}
+
+.videoSearchBody .videoSearchPoweredByView {
+	bottom: -2px;
+	position: relative;
+}
+
+.videoSearchBody .videoSearchSeparator {
+	margin-right: 12px;
+	height: 11px;
+	margin: 0px 8px;
+	border-left-color: #D2D2D2;
+}
+
+.videoSearchBody .videoSearchCount {
+	line-height: 13px;
+	padding-right: 3px;
+	background-position: 100% 0px;
+	color: #FFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.videoSearchBody .videoSearchCount .videoSearchCountInner {
+	padding-right: 3px;
+	padding-left: 3px;
+	background-position: 0px 0px;
+	display: inline-block;
+	background-image: url("../images/sprite_count.png");
+}
+
+.videoSearchBodyContent {
+	position: relative;
+	overflow-y: auto;
+	height: 500px;
+}
+
+.videoSearchList {
+	margin-left: 20px;
+}
+
+.videoSearchList li {
+	width: 145px;
+	margin: 0 15px 15px 0;
+	display: inline-block;
+	cursor: pointer;
+}
+
+.videoSearchList .videoSearchThumb {
+	position: relative;
+	display: block;
+	cursor: pointer;
+}
+
+.videoSearchList #videoSearchAddBtn {
+	bottom: 1px;
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	background: url("../images/icon_plus.png") no-repeat scroll 50% 50%
+		rgba(0, 0, 0, 0.2);
+}
+
+.videoSearchThumb:HOVER #videoSearchAddBtn {
+	display: block;
+}
+
+.videoSearchBodyContent .videoSearchMore {
+	margin-left: 20px;
+}
+
+.videoSearchBodyContent .videoSearchMore .videoSearchMore01 {
+	display: block;
+	width: 100%;
+	height: 35px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F5F5F5;
+	text-align: center;
+}
+
+.videoSearchBodyContent .videoSearchMore .videoSearchMore01:HOVER {
+	background: none repeat scroll 0% 0% #CBCBCB;
+}
+
+.videoSearchBodyContent .videoSearchMore .videoSearchMore01 .videoSearchMore01Btn {
+	color: #777;
+	width: 100%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.videoSearchBodyContent .videoSearchMoreLoading {
+	display: block;
+	background: url("../images/bg_loading.gif") no-repeat scroll 50% 50%
+		transparent;
+	text-indent: -9999px;
+}
+
+.videoSearchItemTitle {
+	margin-top: 10px;
+	font-size: 12px;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.videoSearchItemTitle a {
+	color: #2468ce;
+}
+
+.videoSearchItemSource {
+	font-size: 12px;
+}
+
+.videoSearchItemSource a {
+	color: #969696;
+}
+
+/* Article Quote
+------------------------------------------------------------ */
+.articleQuoteItem {
+	padding: 10px;
+}
+
+.articleQuoteText {
+	padding: 10px 15px 18px 40px;
+	background-image: url(../images/quote_bg.png);
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	background-color: #FAFAFA;
+}
+
+.articleContentInner:hover .articleQuoteItem {
+	background-color: transparent;
+}
+
+.articleQuoteSource {
+	margin-top: 5px !important;
+	color: #999;
+	font-size: 11px !important;
+}
+
+.articleQuoteComm {
+	position: relative;
+	overflow: hidden;
+	letter-spacing: normal;
+	padding-top: 10px;
+}
+
+.articleQuoteDesc {
+	font-size: 14px;
+	line-height: 1.5em;
+	border-left: 2px solid #d0d0d0;
+	color: #666;
+	padding: 0 0 0 6px;
+}
+/* Override CSS if have
+------------------------------------------------------------ */
+#addTextTab .validate_message{
+	margin-bottom: 10px;
+}
+#contentArea .newItem #quoteSourceTarget, #contentArea .newItem #quoteSource{
+	border:0px;
+	padding:3px;
+	background:#F5F5F5;
+}
+#contentArea .newItem #quoteSourceTarget:focus, #contentArea .newItem #quoteSource:focus{
+	border: 1px solid #ddd;
+	padding: 7px 8px 6px;
+	background:#ffffcc;
+}
+
+/* PopUp
+------------------------------------------------------------ */
+#imgSearchPopUp {
+	border: 3px solid #181819;
+	overflow: hidden;
+}
+
+.imgSearchResult {
+	padding: 20px;
+}
+
+.imgSearchResultBody {
+	overflow-y: auto;
+	height: 650px;
+}
+
+.imgSearchContent {
+	background: none repeat scroll 0% 0% #fff;
+	position: relative;	
+	overflow: hidden;
+	height: inherit;
+}
+
+.imgSearchNavLeft {
+	float: left;
+	width: 128px;
+	height: 100%;
+	margin-right: -1px;
+	border-right: 1px solid #ddd;
+}
+
+.imgSearchNavLeftTtl {
+	display: inline-block;
+	width: 100%;
+	line-height: 70px;
+	border-bottom: 1px solid #ddd;
+	background-color: #f9f9f9;
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.imgSearchNavLeftView {
+	margin-top: -1px;
+	border-bottom: 1px solid #e7e7e7;
+}
+
+.imgSearchNavItem {
+	height: 40px;
+	line-height: 39px;
+	border-top: 1px solid #e7e7e7;
+	text-align: center;
+		cursor: pointer;
+	
+}
+
+.imgSearchNavItem span {
+	font-weight: bold;
+	display: inline-block;
+  	width: 100%;
+}
+
+#imgTabTabelog {
+	text-indent: -9999px;
+	background: url("../images/icon_tabelog.png") no-repeat scroll 50% 50% transparent;
+
+}
+
+#imgTabGoogle {
+	text-indent: -9999px;
+	background: url("../images/icon_google.png") no-repeat scroll 50% 50% transparent;
+}
+
+.imgSearchNavItem:HOVER {
+	background-color: #f9f9f9;
+}
+
+.selected {
+	cursor: default!important;
+	border-top-color: #ddd;
+	background-color: #f2f2f2;
+	box-shadow: 0 1px 1px #ececec inset;
+}
+
+.imgSearchHeaderClose {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 37px;
+	height: 37px;
+	text-align: center;
+}
+
+.imgSearchHeaderClsBtn {
+	font-size: 13px;
+	vertical-align: middle;
+	cursor: pointer;
+	font-weight: bolder;
+}
+
+.imgSearchRight {
+	margin-left: 128px;
+}
+.imgSearchHeader {
+	border-bottom: 1px solid #ddd;
+	background-color: #f9f9f9;
+	line-height: 70px;
+	padding-left: 20px;
+}
+
+.imgSearchHeader #imageKeyword {
+	font-size: 12px;
+	padding: 5px;
+	width: 250px;
+}
+
+.imgSearchBox {
+	display: inline-block;
+}
+
+#btnImgSearch {
+	padding: 5px 10px;
+}
+
+.imgSearchStatus {
+	display: inline-block;
+	float: right;
+	padding-right: 20px;
+	padding-top: 10px;
+}
+
+.imgSearchResultBody .imageSearchMore .imageSearchMore01 {
+	display: inline-block;
+	width: 100%;
+	height: 35px;
+	line-height: 32px;
+	background: none repeat scroll 0% 0% #F5F5F5;
+	text-align: center;
+}
+
+.imgSearchResultBody .imageSearchMore .imageSearchMore01:HOVER {
+	background: none repeat scroll 0% 0% #CBCBCB;
+}
+
+.imgSearchResultBody .imageSearchMore .imageSearchMore01 .imageSearchMore01Btn {
+	color: #777;
+	width: 100%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.imgSearchResultBody .imageSearchMoreLoading {
+	display: block;
+	background: url("../images/bg_loading.gif") no-repeat scroll 50% 50%
+		transparent;
+	text-indent: -9999px;
+}
+
+.imgSearchStatus .imageSearchCount {
+	line-height: 13px;
+	padding-right: 3px;
+	background-position: 100% 0px;
+	color: #FFF;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+
+.imgSearchStatus .imageSearchCount .imageSearchCountInner {
+	padding-right: 3px;
+	padding-left: 3px;
+	background-position: 0px 0px;
+	display: inline-block;
+	background-image: url("../images/sprite_count.png");
+}

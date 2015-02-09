@@ -1,0 +1,54 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>      
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">{$topic.name}</strong></li>
+    </ul>
+  </div>
+</section>
+<section id="pickUp">
+	<div class="inner1000 clearfix">
+		<div id="post_header" style="padding-bottom: 0px">
+			<div class="post_thumb"><img src="{$URL_UPLOADS}/{$topic.thumbnail}"></div>
+			<div class="post_title_lead">
+				<h1 itemprop="topic_name" class="magT0">{$topic.name}</h1>
+				<p class="pLead">{$topic.detail}</p>
+			</div>
+		</div>
+	</div>
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix ">
+		<div id="main">
+			<!--Begin content-->
+			<div id="contentz">
+				<div class="headline padT10 clearfix"><h2>このトピックの記事一覧</h2><p></p></div>
+				<!--Begin Post Listing-->
+				<div class="post_list" id="home_post_list">
+						{foreach key=k item=article from=$arrListArticles}
+						<!--Begin One Post-->
+						<div class="one_post clearfix">
+							<div class="thumb"><a href="{$clsRewrite->url_postdetail($article.id)}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/></a></div>
+							<div class="text">
+								<p class="post_title clearfix"><a href="{$clsRewrite->url_postdetail($article.id)}">{$article.title}</a></p>
+								<p class="post_lead clearfix">{$article.detail|mb_truncate:100:'..'}</p>
+								<span class="flLeft">by {$article.username}</span><span class="flRight clearfix"><b>{$article.page_view|default:'0'}</b> view</span>
+							</div>
+						</div>
+						<!--End One Post-->
+						{/foreach}
+				</div>
+				<!--End Post Listing-->
+				<div class="pagination">
+					<ul>
+					{$clsPaging->showPagingNew2()}
+					</ul>
+				</div>
+			</div>
+			<!--End content-->
+		</div>
+		<div id="sidebar">
+			{include file="_sidebar.htm"}
+		</div>
+	</div>
+</div>

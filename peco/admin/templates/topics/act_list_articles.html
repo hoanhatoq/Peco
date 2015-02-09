@@ -1,0 +1,38 @@
+{include file="_block_inner_head.html"}
+<form name="theForm" action="" method="post">
+<table width="100%" border="0">
+<tr>
+	<td style="padding:10px"><h1>{$core->getLang("Change_Topic_List")}</h1></td>
+</tr>
+<tr>
+	<td style="padding:0px 10px" width="100%" valign="top">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="gridtable">
+		<tr>
+			<th class="gridheader">トピックid</th><th class="gridheader">トピック名</th><th class="gridheader">紐づけ記事id </th><th class="gridheader1">&nbsp;</th>
+		</tr>
+		<tr>
+			<td align="center" class="gridrow2" width="10%" bgcolor="#F5F5F5">{$topic.id}</td>
+			<td align="center" class="gridrow2" width="15%" bgcolor="#F5F5F5">{$topic.name}</td>
+			<td align="center" class="gridrow2"><input type="text" name="list_article_id" value="{$topic.list_article_id}" style="width: 99%"></td>
+			<td align="center" class="gridrow3" width="10%"><input type="submit" name="btnSaveTopic" value=" 更新  " class="btn"></td>
+		</tr>
+	</table>
+	</td>
+</tr>
+<tr>
+	<td style="padding:10px 10px 0px" width="100%" valign="top">
+	{$clsDataGrid->showDataGrid("theForm")}
+	</td>
+</tr>
+<tr>
+	<td colspan="13" align="center" style="padding:10px 10px 10px" width="100%" valign="top">
+	<input type="submit" name="btnSave" value="トピック内スコアを更新" class="btn">
+	</td>
+</tr>
+<tr>
+	<td  style="padding:0px 10px">
+	{$clsDataGrid->showPaging("theForm")}
+	</td>
+</tr>
+</table>
+</form>

@@ -1,0 +1,37 @@
+{assign var="span_title1" value=$core->getLang("Pickup")}
+{assign var="span_title2" value=$core->getLang("Pickup_Management")}
+{include file="_block_inner_head_add.html"}
+<form name="theForm" action="" method="post">
+<table width="100%" border="0">
+<tr>
+	<td style="padding:10px"><h1>{$core->getLang("Pickup_Add_Edit")}</h1></td>
+</tr>
+<tr>
+	<td style="padding:0px 10px" width="100%" valign="top">
+	<table width="100%" cellspacing="0" cellpadding="0" border="0" class="gridtable">
+		<tr>
+			<th class="gridheader">記事id</th><th class="gridheader">ピックアップ開始予約日</th><th class="gridheader">ピックアップ終了予約日</th><th class="gridheader">最上部</th><th class="gridheader">ピックアップ露出枠No</th><th class="gridheader1">&nbsp;</th>
+		</tr>
+		<tr>
+			<td align="center" valign="top" class="gridrow2" width="10%"><input type="text" name="article_id" value="{$smarty.post.article_id}" placeholder="" style="width: 98%">
+			{if $errors.article_id}<div class="validate_message">{$errors.article_id}</div>{/if}
+			</td>
+			<td align="center" valign="top" class="gridrow2"><input type="text" name="from_date" value="{$smarty.post.from_date}" placeholder="ex: 2015/01/05" style="width: 98%">
+			{if $errors.from_date}<div class="validate_message">{$errors.from_date}</div>{/if}
+			</td>
+			<td align="center" valign="top" class="gridrow2"><input type="text" name="to_date" value="{$smarty.post.to_date}" placeholder="ex: 2015/02/05" style="width: 98%">
+			{if $errors.to_date}<div class="validate_message">{$errors.to_date}</div>{/if}
+			</td>
+			<td align="center" valign="top" class="gridrow2"><input type="text" name="top_ok" value="{$smarty.post.top_ok}" placeholder="0: いいえ, 1: はい" style="width: 98%">
+			{if $errors.top_ok}<div class="validate_message">{$errors.top_ok}</div>{/if}
+			</td>
+			<td align="center" valign="top" class="gridrow2"><input type="text" name="pickup_order" value="{$smarty.post.pickup_order}" placeholder="ex: 1-1000" style="width: 98%">
+			{if $errors.pickup_order}<div class="validate_message">{$errors.pickup_order}</div>{/if}
+			</td>
+			<td align="center" valign="top" class="gridrow3" width="10%"><input type="submit" name="btnSave" value=" 更新  " class="btn"></td>
+		</tr>
+	</table>
+	</td>
+</tr>
+</table>
+</form>

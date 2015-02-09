@@ -1,0 +1,20 @@
+{include file="_block_inner_head.html"}
+<form name="theForm" action="" method="post">
+<table width="100%" border="0">
+<tr>
+<td style="padding:10px">
+	<h1>{$core->getLang("Features_List")}</h1>
+</td>
+</tr>
+<tr>
+	<td style="padding:0px 10px" width="100%" valign="top">
+	{$clsDataGrid->showDataGrid("theForm")}
+	</td>
+</tr>
+<tr>
+	<td  style="padding:0px 10px">
+	{$clsDataGrid->showPaging("theForm")}
+	</td>
+</tr>
+</table>
+</form>

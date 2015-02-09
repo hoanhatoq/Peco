@@ -1,0 +1,28 @@
+{if $sub ne "default"}
+	{if $core->template_exists("$mod/$sub.default.htm")}		
+		{if $act ne "default"}
+			{if $core->template_exists("$mod/$sub.$act.htm")}
+				{include file="$mod/$sub.$act.htm"}	
+			{else}
+				{assign var=content value="Action File not Found!"}
+				{include file="notfound.htm"}		
+			{/if}
+		{else}	
+			{include file="$mod/$sub.default.htm"}	
+		{/if}				
+	{else}
+		{assign var=content value="Sub Module File not Found!"}
+		{include file="notfound.htm"}		
+	{/if}
+{else}
+	{if $act ne "default"}
+		{if $core->template_exists("$mod/act_$act.htm")}
+			{include file="$mod/act_$act.htm"}	
+		{else}
+			{assign var=content value="Action File not Found!"}
+			{include file="notfound.htm"}		
+		{/if}
+	{else}
+		{include file="$mod/act_default.htm"}
+	{/if}
+{/if}

@@ -1,0 +1,39 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">パスワードの変更</strong></li>
+    </ul>
+  </div>
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 clearfix">
+		<div class="loginbox">
+			<h2 class="magB10">パスワードの再設定</h2>
+			<hr class="magB20" />
+			<div class="clearfix">
+				<!--Begin ResetForm-->
+				<form action="" method="post" id="fResetPass">
+					{if $errors.token ne ""}
+						{$errors.token}
+					{else}
+					<div class="form-input">
+						<label>新規パスワード</label>
+						<input type="password" placeholder="半角英数字で６文字以上" name="password" id="password" value="{$smarty.post.password}" class="input-large input-sign" autofocus="autofocus">
+						{if $errors.password ne ""}<span class="validate_message">{$errors.password}</span>{/if}
+					</div>
+					<div class="form-input">
+						<label>新規パスワードの確認</label>
+						<input type="password" placeholder="パスワードをもう一度入力" name="password_confirm" id="password_confirm1" value="{$smarty.post.password_confirm}" class="input-large input-sign" autofocus="autofocus">
+						{if $errors.password_confirm ne ""}<span class="validate_message">{$errors.password_confirm}</span>{/if}
+					</div>
+					<div class="text-center">
+						<button type="submit" name="btnSubmit" value="ResetPass" class="btn-primary-red btn-large magB10">パスワードを変更</button>
+					</div>
+					{/if}
+				</form>
+				<!--End ResetForm-->
+			</div>
+		</div>
+	</div>
+</div>

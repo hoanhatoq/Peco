@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ja-JP">
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<meta charset="UTF-8">
+<title>{$site_title|default:$core->getLang('PECOPECO')}</title>
+<meta name="viewport" content="width=device-width">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="{$meta_description}">
+<meta name="keywords" content="{$meta_keywords}" />
+<link rel="stylesheet" type="text/css" href="{$URL_CSS}/jquery-ui.css" media="all"> 	
+<link rel="stylesheet" type="text/css" href="{$URL_CSS}/style.css" media="all">
+<link rel="author" href="{$URL_CMS}">
+<!-- Open Graph protocol -->
+<meta property="og:title" content="{$og.title|default:'PECO [ペコ]'}">
+<meta property="og:description" content="{$og.description}">
+<meta property="og:url" content="{$og.url}">
+<meta property="og:image" content="{$og.image}">
+<meta property="og:type" content="{$og.type|default:'website'}">
+<meta property="og:site_name" content="{$og.site_name|default:'PECO [ペコ]'}">
+<!--[if lt IE 9]><script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
+<script>var URL_CMS = "{$URL_CMS}";</script>
+<script type="text/javascript" src="{$URL_JS}/jquery-1.9.1.min.js"></script>
+<script type="text/javascript" src="{$URL_JS}/startup.js"></script>
+</head>
+<body>
+{include file="_header.htm"}
+{include file="$mod/index.htm"}
+{include file="_footer.htm"}
+</body>
+</html>

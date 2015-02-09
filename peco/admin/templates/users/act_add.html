@@ -1,0 +1,92 @@
+{assign var="span_title1" value=$core->getLang("Users")}
+{assign var="span_title2" value=$core->getLang("Users_Management")}
+{include file="_block_inner_head_add.html"}
+<form action="" method="post" style="padding:10px" name="theForm" id="theForm" accept-charset="UTF-8" enctype="multipart/form-data">
+<h1>{$core->getLang("Users_Add_Edit")}</h1>
+<div class="jpform fleft mgR20">
+	<div class="row">
+		<label>ライター名 (*)</label>
+		<div class="input"><input type="text" name="name" value="{$smarty.post.name}" required >
+		{if $errors.name ne ""}<div class="validate_message">{$errors.name}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>アカウント名 (*)</label>
+		<div class="input"><input type="text" name="account_name" value="{$smarty.post.account_name}" required >
+		{if $errors.account_name ne ""}<div class="validate_message">{$errors.account_name}</div>{/if}
+		</div>
+	</div>	
+	<div class="row">
+		<label>パスワード</label>
+		<div class="input"><input type="password" name="password" value="" placeholder="{if $smarty.post.id>0}Leave blank if not change{/if}">		
+		</div>
+	</div>
+	<div class="row">
+		<label>メールアドレス (*)</label>
+		<div class="input"><input type="email" name="email" value="{$smarty.post.email}" required >
+		{if $errors.email ne ""}<div class="validate_message">{$errors.email}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>自己紹介文</label>
+		<div class="input"><textarea name="introduction" rows="5">{$smarty.post.introduction}</textarea></div>
+	</div>
+	<div class="row">
+		<label>登録URL</label>
+		<div class="input"><input type="url" name="introduction_url" value="{$smarty.post.introduction_url}"></div>
+	</div>	
+	<div class="row">
+		<label>メルマガ有無 </label>
+		<div class="input"><input type="number" name="receive_email" value="{$smarty.post.receive_email|default:'1'}"></div>
+	</div>
+	<div class="row">
+		<label>ステータス (*)</label>
+		<div class="input"><input type="number" name="is_verified" value="{$smarty.post.is_verified}" required >
+		{if $errors.is_verified ne ""}<div class="validate_message">{$errors.is_verified}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>登録日日 (*)</label>
+		<div class="input"><input type="date" name="created_at" value="{$smarty.post.created_at|date_format:'%Y/%m/%d'}" required ></div>
+	</div>
+	<div class="row">
+		<label>最終更新日  (*)</label>
+		<div class="input"><input type="date" name="updated_at" value="{$smarty.post.updated_at|date_format:'%Y/%m/%d'}" required ></div>
+	</div>
+	<div class="row">
+		<label>&nbsp;</label>
+		<div class="input">
+		<input type="hidden" name="id" value="{$smarty.post.id}">
+		<input type="hidden" name="old_name" value="{$smarty.post.old_name}">
+		<input type="hidden" name="old_email" value="{$smarty.post.old_email}">
+		<input type="hidden" name="old_account_name" value="{$smarty.post.account_name}">
+		<input type="hidden" name="old_icon" value="{$smarty.post.old_icon}">
+		<input type="hidden" name="old_password" value="{$smarty.post.password}">
+		<input type="submit" name="btnSave" value="&nbsp;&nbsp;&nbsp; 保存  &nbsp;&nbsp;">
+		<a href="?mod={$mod}" class="button">&nbsp;&nbsp;&nbsp;キャンセル&nbsp;&nbsp;&nbsp;</a>
+		</div>
+	</div>
+</div>
+<div class="jpform fleft mgL20">
+	<div class="row">		
+		<div class="input">
+		Avatar<br><br>
+		<div style="position: relative; height:120px;">
+		<div class="resizeAndCrop" style="width:120px; height:120px;"><img src="{if $smarty.post.old_icon ne ''}{$URL_ICON}/{$smarty.post.old_icon}{else}{$ADMIN_URL_IMAGES}/noimage.png{/if}" width="100%" height="auto" id="img_thumbnail"></div>
+		</div>
+		<br><br>
+		<input type="file" name="icon" value="" onchange="setPreviewAvatar(this, '#img_thumbnail');">
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+</form>
+{literal}
+<script>
+$("#theForm").validate({
+	submitHandler: function(form) {
+		form.submit();
+	}
+});
+</script>
+{/literal}

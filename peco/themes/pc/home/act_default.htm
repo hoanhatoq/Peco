@@ -1,0 +1,68 @@
+<section id="pickUp">
+	<div class="inner1000 clearfix">
+		<ul>
+			{foreach key=k item=article from=$arrListTopPickup}
+			<li style="{if $k==2}float:right; margin-right:0px{/if}">
+			<a href="{$clsRewrite->url_postdetail($article.id)}" class="clearfix" title="{$article.title}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="{$article.title}" /></a>
+					<div class="pad clearfix">
+						<a href="{$clsRewrite->url_postdetail($article.id)}" class="title clearfix" title="{$article.title}">{$article.title}</a>
+						<span class="flLeft">by {$article.username}</span><span class="flRight clearfix"><b>{$article.page_view|default:'0'}</b> view</span>
+					</div>
+			</li>
+			{/foreach}
+			<!-- <li><a href="#" class="clearfix"><img src="{$URL_IMAGES}/ex_img2.jpg" alt="Image 1" /></a>
+					<div class="pad clearfix">
+						<a href="#" class="title clearfix">中国で飼われている犬がヤバイ・・・2行まで2行まで2行まで</a>
+						<span class="flLeft">by PECO</span><span class="flRight clearfix"><b>2014</b> view</span>
+					</div>
+			</li> -->
+		</ul>
+	</div>
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix ">
+		<div id="main">
+			<!--Begin nav-->
+			<nav id="left_nav">
+				<ul>
+					<li class="current"><a href="">注目</a></li>
+					{foreach key=k item=topic from=$arrListTopics}
+					{if $k < 10}
+					<li><a href="{$clsRewrite->url_topic($topic)}">{$topic.name}</a></li>
+					{/if}
+					{/foreach}
+				</ul>
+			</nav>
+			<!--End nav-->
+			<!--Begin content-->
+			<div id="content">
+				<div class="headline padT10 clearfix"><h2>注目まとめ</h2><p>{$smarty.now|date_format:"%Y.%m.%d %a"}</p></div>
+				<!--Begin Post Listing-->
+				<div class="post_list" id="home_post_list">
+						{foreach key=k item=article from=$arrListArticles}
+						<!--Begin One Post-->
+						<div class="one_post clearfix">
+							<div class="thumb"><a href="{$clsRewrite->url_postdetail($article.id)}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/></a></div>
+							<div class="text">
+								<p class="post_title clearfix"><a href="{$clsRewrite->url_postdetail($article.id)}">{$article.title}</a></p>
+								<p class="post_lead clearfix">{$article.detail|mb_truncate:76:'..'}</p>
+								<span class="flLeft">by {$article.username}</span><span class="flRight clearfix"><b>{$article.page_view|default:'0'}</b> view</span>
+							</div>
+						</div>
+						<!--End One Post-->
+						{/foreach}
+				</div>
+				<!--End Post Listing-->
+				<div class="pagination">
+					<ul>
+					{$clsPaging->showPagingNew2()}
+					</ul>
+				</div>
+			</div>
+			<!--End content-->
+		</div>
+		<div id="sidebar">
+			{include file="_sidebar.htm"}
+		</div>
+	</div>
+</div>

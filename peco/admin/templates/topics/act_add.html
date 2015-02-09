@@ -1,0 +1,87 @@
+{assign var="span_title1" value=$core->getLang("Topics")}
+{assign var="span_title2" value=$core->getLang("Topics_Management")}
+{include file="_block_inner_head_add.html"}
+<form action="" method="post" style="padding:10px" name="theForm" id="theForm" accept-charset="UTF-8" enctype="multipart/form-data">
+<h1>{$core->getLang("Topics_Add_Edit")}</h1>
+<div class="jpform fleft mgR20">
+	<div class="row" style="background: #F5F5F5; padding:5px 0px;">
+		<label>トピックid</label>
+		<div class="input">{$smarty.get.id}</div>		
+	</div>
+	<div class="row">
+		<label>トピック名 (*)</label>
+		<div class="input"><input type="text" name="name" id="name" value="{$smarty.post.name}" required >
+		{if $errors.name ne ""}<div class="validate_message">{$errors.name}</div>{/if}
+		</div>		
+	</div>
+	<div class="row">
+		<label>Path (*)</label>
+		<div class="input"><input type="text" name="path" id="path" value="{$smarty.post.path}" required >
+		{if $errors.path ne ""}<div class="validate_message">{$errors.path}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>トピックリード文 (*)</label>
+		<div class="input"><textarea name="detail" id="detail" rows="8" required>{$smarty.post.detail}</textarea>
+		{if $errors.detail ne ""}<div class="validate_message">{$errors.detail}</div>{/if}
+		</div>
+	</div>	
+	<div class="row">
+		<label>優先 (*)</label>
+		<div class="input"><input type="number" name="priority" id="priority" value="{$smarty.post.priority|default:'1'}" required ></div>
+	</div>
+	<div class="row">
+		<label>トピックスコア  (*)</label>
+		<div class="input"><input type="number" name="score" id="score" value="{$smarty.post.score|default:'0'}" required ></div>
+	</div>
+	<div class="row">
+		<label>トピックステータス  (*)</label>
+		<div class="input"><input type="number" name="display_flags" id="display_flags" value="{$smarty.post.display_flags|default:'0'}" required ></div>
+	</div>
+	<div class="row">
+		<label>クリエイタ (*)</label>
+		<div class="input"><input type="number" name="created_by" id="created_by" value="{$smarty.post.created_by|default:'0'}" required ></div>
+	</div>	
+	<div class="row">
+		<label>登録日日 (*)</label>
+		<div class="input"><input type="date" name="created_at" value="{$smarty.post.created_at|date_format:'%Y/%m/%d'}" required ></div>
+	</div>
+	<div class="row">
+		<label>最終更新日  (*)</label>
+		<div class="input"><input type="date" name="updated_at" value="{$smarty.post.updated_at|date_format:'%Y/%m/%d'}" required ></div>
+	</div>
+	<div class="row">
+		<label>&nbsp;</label>
+		<div class="input">
+		<input type="hidden" name="id" value="{$smarty.post.id}">
+		<input type="hidden" name="old_path" value="{$smarty.post.old_path}">
+		<input type="hidden" name="old_thumbnail" value="{$smarty.post.old_thumbnail}">
+		<input type="submit" name="btnSave" value="&nbsp;&nbsp;&nbsp; 保存  &nbsp;&nbsp;">
+		<a href="?mod={$mod}" class="button">&nbsp;&nbsp;&nbsp;キャンセル&nbsp;&nbsp;&nbsp;</a>
+		</div>
+	</div>
+</div>
+<div class="jpform fleft mgL20">
+	<div class="row">		
+		<div class="input">
+		サムネ画像<br><br>
+		<div style="position: relative; height:160px;">
+		<div class="resizeAndCrop" style="width:160px; height:160px;"><img src="{if $smarty.post.old_thumbnail ne ''}{$URL_UPLOADS}/{$smarty.post.old_thumbnail}{else}{$ADMIN_URL_IMAGES}/noimage.png{/if}" width="100%" height="auto" id="img_thumbnail"></div>
+		</div>
+		<br><br>
+		<input type="file" name="thumbnail" value="" onchange="setPreviewAvatar(this, '#img_thumbnail');">
+		<!-- <input type="hidden" name="thumbnail_base64" id="thumbnail_base64" value=""> -->
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+</form>
+{literal}
+<script>
+$("#theForm").validate({
+	submitHandler: function(form) {
+		form.submit();
+	}
+});
+</script>
+{/literal}

@@ -1,0 +1,51 @@
+<?php /* Smarty version 2.6.19, created on 2015-02-02 08:10:57
+         compiled from components/article_element.html */ ?>
+<div id="[articleItemId]" class="articleContent clearfix" >
+	<div class="articleContentInner clearfix">
+		[articleText]
+		<div class="editItemBtnList clearfix">
+			<ul class="editItemBtns clearfix" style="float: left;">
+				<li style="border-left: none">
+					<button class="editItem editItemEdit" onclick="[itemEditFunc]">編集する</button>
+				</li>
+				<li style="border-right: none">
+					<button class="editItem editItemRemove" style="border-right: none" onclick="onItemRemove(this)">
+						削除する
+					</button>
+				</li>
+			</ul>
+			<ul id="moveItemBtns" class="editItemBtns clearfix"
+				style="float: right;">
+				<li style="border-left: none">
+					<button class="editItem editItemTop" onclick="onItemMove(this, 'itemTop')">先頭に移動</button>
+				</li>
+				<li>
+					<button class="editItem editItemUp" onclick="onItemMove(this, 'itemUp')">上に移動</button>
+				</li>
+				<li>
+					<button class="editItem editItemDown" onclick="onItemMove(this, 'itemDown')">下に移動</button>
+				</li>
+				<li>
+					<button class="editItem editItemBottom" onclick="onItemMove(this, 'itemBottom')">最後に移動</button>
+				</li>
+				<li style="border-right: none">
+					<p class="editItemMove">
+						<span class="editItem">ドラッグで移動</span>
+					</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	
+	<div class="articleAddHereArea">
+		<div class="articleAddHere">
+	  		<span class="articleAddHereBtn"></span>
+	  		<p class="articleAddHereLine">
+	  			<span class="articleAddHereView" onclick="displayAddHereTab(this)">追加</span>
+	  		</p>
+		</div>
+		<div id="articleAddHereTab" class="articleAddHereTab">
+			
+		</div>
+	</div>
+</div>

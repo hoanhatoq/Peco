@@ -1,0 +1,64 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$clsRewrite->url_mypage()}"><span itemprop="title">{$core->_USER.name}</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">マイページ</strong></li>
+    </ul>
+  </div>
+	{assign var=current_user_name value=$core->_USER.name}
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix">
+		<div id="main">
+			<!--Begin main-->
+			<div class="userdata clearfix">
+				<img class="avatar" src="{if $core->_USER.icon ne ""}{$URL_ICON}/{$core->_USER.icon}{else}{$URL_IMAGES}/noimage_person.png{/if}" alt="Avatar">
+				<h1 class="account_name">{$core->_USER.name}</h1>
+				<ul class="stats_data clearfix">
+          <li class="view">閲覧数：<span>0</span></li>
+          <li class="like">お気に入られ数：<span>0</span></li>
+        </ul>
+				<p class="link_setting">
+				<a href="{$clsRewrite->url_setting()}">&raquo; プロフィールを編集する</a>
+				</p>
+			</div>
+			<ul class="tab-common">
+				<li class="active"><a href="{$clsRewrite->url_mypage()}"><span>まとめ</span><span class="badge-num">{$totalItem}</span></a></li>
+				<li class=""><a href="{$clsRewrite->url_favorites($current_user_name)}"><span>お気に入り</span><span class="badge-num">0</span></a></li>
+			</ul>
+			<h2 class="h2 clearfix">作ったまとめ <p>お気に入られ数</p><p>閲覧数</p></h2>
+			<table id="createList">
+			<tbody>
+				{foreach key=k item=article from=$arrListArticles}
+					<tr>
+						<td class="listThumb">
+								<a href="{$clsRewrite->url_addID($article.id)}">
+									<img width="60" height="60" src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" class="crop_image" alt="{$article.title}">
+								</a>
+						</td>
+						<td class="listMain">
+							<p class="listTitle" style="margin:0px">
+									<a href="{$clsRewrite->url_addID($article.id)}">{$article.title|default:"タイトルを入力してください (下書き)"}</a>
+							</p>
+							<p class="listEditInline">更新：{$article.published_at|date_format:"%Y年%m月%d日"}</p>
+								<a rel="nofollow" data-method="delete" data-confirm="本当に削除してよろしいですか？" class="listEdit" href="">削除する</a>
+						</td>
+						<td class="listView">1</td>
+						<td class="listLike"><span>0</span></td>
+					</tr>
+				{/foreach}		
+			</tbody>
+			</table>
+			<!--End main-->
+			<div class="pagination">
+				<ul>
+				{$clsPaging->showPagingNew2()}
+				</ul>
+			</div>
+		</div>
+		<div id="sidebar">
+			{include file="_sidebar.htm"}
+		</div>
+	</div>
+</div>

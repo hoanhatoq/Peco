@@ -1,0 +1,43 @@
+<?php /* Smarty version 2.6.19, created on 2015-02-02 10:51:53
+         compiled from components/tab_check_url.html */ ?>
+<div id="addURLCheckTab" class="newItem">
+   	<!-- <p style="background: none; padding-left: 0px;">
+   		<span class="siteTitleText" onclick="onSiteTitleClick(this)">siteTitleText</span>			    
+   	</p>	 -->
+   	<input id="imgList" type="hidden">
+   	<input id="siteTitle" size="30" type="text" style="margin-top: 0px; width: 690px;">
+   	<a href="#" id="siteURL">#</a>
+   	<textarea id="siteDesc"></textarea>
+
+   	<div class="inner1000 clearfix">
+		<div class="itemThumb">
+			<div id="slider">
+		    </div>
+		    <div id="divNoImg" style="display: none;">
+		    	<img style="max-width: 150px;" src="<?php echo $this->_tpl_vars['URL_IMAGES']; ?>
+/noimage.png">
+		    </div>
+		</div>
+		<div class="itemText">		
+			<a href="javascript:void(0)" class="controlPrev">&#8592;</a>			
+			<a href="javascript:void(0)" class="controlNext">&#8594;</a>
+	  		<span id="curImg">0</span>/<span id="totalImg">0</span><span>件</span>
+	  		<p style="background: none; padding-left: 0px;">
+		  		<input id="noImg" type="checkbox" style="width: auto;"/>
+		  		<label for="noImg">画像無し</label>
+	  		</p>
+	  		<p style="background: none; padding-left: 0px;">
+	  			<a href="javascript:void(0)" id="addRemoteURL" onclick="onAddRetURLClick(this)">画像のURLを入力</a>
+	  		</p>
+	  		<div id="divThumbURL" style="display: none;">
+		  		<input id="itemThumbURL" type="text" style="display: inline-block; margin-top: 0px;" placeholder="画像のURLを入力">
+		  		<a href="javascript:void(0)" class="imgURLCheck">チェック</a>
+	  		</div>
+		</div>							
+	</div>
+	<textarea id="siteComment" placeholder="リンクの紹介コメントを入力"></textarea>
+	<div class="addItemBtn clearfix">
+		<input class="btn btn_black" id="btnAddURL" name="btnAddURL" type="button" onclick="onAddURLClick(this)" value="追加"/>
+		<input id="btnCancel" class="btn btn_default" type="button" onclick="onCancel(this)" value="キャンセル">
+	</div>
+</div>

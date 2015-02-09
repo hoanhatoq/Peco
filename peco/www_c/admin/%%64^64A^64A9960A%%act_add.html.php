@@ -1,0 +1,360 @@
+<?php /* Smarty version 2.6.19, created on 2015-02-03 09:25:49
+         compiled from articles/act_add.html */ ?>
+<?php $this->assign('span_title1', $this->_tpl_vars['core']->getLang('Articles')); ?>
+<?php $this->assign('span_title2', $this->_tpl_vars['core']->getLang('Articles_Management')); ?>
+<?php $_smarty_tpl_vars = $this->_tpl_vars;
+$this->_smarty_include(array('smarty_include_tpl_file' => "_block_inner_head_add.html", 'smarty_include_vars' => array()));
+$this->_tpl_vars = $_smarty_tpl_vars;
+unset($_smarty_tpl_vars);
+ ?>
+<script>
+$.time 					= 	"<?php echo $this->_tpl_vars['google_api']['time']; ?>
+";
+$._urlGSearch    		= 	"<?php echo $this->_tpl_vars['google_api']['urlGSearch']; ?>
+";
+$._urlGVideo     		= 	"<?php echo $this->_tpl_vars['google_api']['urlGVideo']; ?>
+";
+$._urlGVideoSearch     	= 	"<?php echo $this->_tpl_vars['google_api']['urlGVideoSearch']; ?>
+";
+$._key    				= 	'<?php echo $this->_tpl_vars['google_api']['key']; ?>
+';
+$._cx     				= 	'<?php echo $this->_tpl_vars['google_api']['cx']; ?>
+';
+$._cx_video     		= 	'<?php echo $this->_tpl_vars['google_api']['cx_video']; ?>
+';
+$._num    				= 	10;
+$._stype  				= 	'image'; 
+$._part 				= 	'snippet';
+var ARTICLE_ID			=	<?php echo $this->_tpl_vars['ARTICLE_ID']; ?>
+;
+var URL_IMAGES			=	"<?php echo $this->_tpl_vars['URL_IMAGES']; ?>
+";
+var ERR_HEADING_NULL	=	"テキストが空です";
+var ERR_TEXT_NULL		=	"テキストが空です";
+var ERR_TITLE_NULL		=	"タイトルが空です";
+var ERR_TITLE_TOO_LONG	=	"タイトルは50字以内で入力してください";
+var ERR_DESC_NULL		=	"説明が空です";
+var ERR_DESC_TOO_LONG	=	"説明は160字以内で入力してください";
+</script>
+<link rel="stylesheet" type="text/css" href="<?php echo $this->_tpl_vars['ADMIN_URL_CSS']; ?>
+/createpost.css">
+<link rel="stylesheet" type="text/css" href="<?php echo $this->_tpl_vars['ADMIN_URL_CSS']; ?>
+/jquery-ui.css" media="all"> 	
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/notify.min.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/fill.box.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/jquery-ui.min.js"></script> 
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/color-picker.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/peco-tab.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/peco-slider.js"></script>
+<script type="text/javascript" src="<?php echo $this->_tpl_vars['ADMIN_URL_JS']; ?>
+/peco-createpost.js"></script>
+
+<div style="padding:10px;">
+<h1>記事の編集</h1>
+<form action="" method="post" id="fCreatePost">
+<table width="100%" cellspacing="0" cellpadding="0" border="0" class="gridtable">
+	<tr>
+		<th class="gridheader">記事id</th>
+		<th class="gridheader">ユーザーid</th>
+		<th class="gridheader">紐づけトピックid</th>
+		<th class="gridheader">紐づけトピック名</th>
+		<th class="gridheader">記事ステータス</th>
+		<th class="gridheader">優先</th>
+		<th class="gridheader">記事スコア</th>
+		<th class="gridheader">投稿日</th>
+		<th class="gridheader">最終更新日</th>
+		<th class="gridheader1">&nbsp;</th>
+	</tr>
+	<tr>
+		<td align="center" class="gridrow2" bgcolor="#F5F5F5"><?php echo $_POST['article_id']; ?>
+</td>
+		<td align="center" class="gridrow2"><input type="text" name="created_by" value="<?php echo $_POST['created_by']; ?>
+"></td>
+		<td align="center" class="gridrow2"><input type="text" name="list_topic_id" value="<?php echo $_POST['list_topic_id']; ?>
+"></td>
+		<td align="center" class="gridrow2" bgcolor="#F5F5F5"><?php echo $this->_tpl_vars['article']['list_topic_name']; ?>
+</td>
+		<td align="center" class="gridrow2" bgcolor="#F5F5F5"><?php echo $this->_tpl_vars['article']['status_text']; ?>
+ =>
+		<select id="new_status" name="new_status">
+			<option value=""></option>
+			<option value="0">下書き</option>
+			<option value="1">公開</option>
+			<option value="2">非公開</option>
+			<option value="3">使用禁止</option>
+		</select>
+		</td>
+		<td align="center" class="gridrow2"><input type="text" name="priority" value="<?php echo $_POST['priority']; ?>
+"></td>
+		<td align="center" class="gridrow2"><input type="text" name="score" value="<?php echo $_POST['score']; ?>
+"></td>
+		<td align="center" class="gridrow2"><input type="text" name="created_at" value="<?php echo $_POST['created_at']; ?>
+"></td>
+		<td align="center" class="gridrow2"><input type="text" name="updated_at" value="<?php echo $_POST['updated_at']; ?>
+"></td>
+		<td align="center" class="gridrow3"><input type="submit" name="btnSave" id="btnSave1" value=" 更新  " class="btn">
+		<input type="hidden" name="btnSave" value="Save">
+		</td>
+	</tr>
+</table>
+</form>
+<section id="wrap" class="clearfix">
+	
+</section>
+</div>
+<!--Begin UrlSearchPopup-->
+
+<div id="urlSearchPopUp">
+		<div class="urlSearchHeader">
+			<span>リンクを探す</span>
+  			<input id="urlKeyword" type="text" placeholder="リンクを検索するキーワードを入力">
+  			<input class="btn btn_black" id="btnUrlSearch" type="button" value="検索"/>
+  			<input id="btnDialogClose" class="btn btn_default" type="button" value="閉じる">
+  			<input id="urlKeywordQ" type="hidden" value="">
+		</div>  
+		<div class="urlSearchBody" style="display: none;">
+			<div class="urlSearchBodyHead">
+				<p class="urlSearchBodyHeadTextL01">検索結果</p>
+				<div class="urlSearchBodyHeadTextR01">
+					<span class="urlSearchPoweredBy">
+						<a href="http://www.google.com/" target="_blank">
+						<img src="<?php echo $this->_tpl_vars['ADMIN_URL_IMAGES']; ?>
+/img_poweredbygoogle.png" alt="Powered by Google" class="urlSearchPoweredByGoogle"></a>
+						<span class="urlSearchSeparator">|</span>
+					</span>
+					<span>追加したリンク</span>
+					<span class="urlSearchCount">
+						<span class="urlSearchCountInner">0</span>
+					</span> 
+					<span>件</span>
+				</div>
+			</div>
+			<div class="urlSearchBodyContent">
+				<ul class="urlSearchList">
+					
+				</ul>
+				<input id="urlPage" type="hidden" value="1">
+				<p class="urlSearchMore">
+					<span class="urlSearchMore01">
+						<a id="urlMore" class="urlSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+						<span id="urlMoreLoading" class="urlSearchMoreLoading" style="display: none;">読み込み中</span>
+					</span>						
+				</p>
+			</div>
+		</div>
+	</div>
+<!--End UrlSearchPopup-->
+<!--Begin TwitterSearchPopup-->
+	<div id="twitterSearchPopUp">
+		<div class="tweetSearchHeader">
+			<span>Twitterで検索してまとめる</span>
+  			<input id="tweetKeyword" type="text" placeholder="検索するワードを入力">
+  			<input class="btn btn_black" id="btnTweetSearch" type="button" value="検索"/>
+  			<input id="btnTwitterClose" class="btn btn_default" type="button" value="閉じる">
+  			<input id="tweetKeywordQ" type="hidden" value="">
+  			<input id="tweetExcludeKeywordQ" type="hidden" value="">
+  			
+  			<div class="tweetSearchCheck">
+		      <input type="radio" id="typeKeyword" name="rdTweetType" value="keyword" checked="checked" ><label for="typeKeyword">キーワード</label>
+		      <input type="radio" id="typeUser" name="rdTweetType" value="user"><label for="typeUser">ユーザー</label>
+
+		      <input type="checkbox" name="excludeRT" id="excludeRT" value="1" checked="checked" ><label id="lblExcludeRT" for="excludeRT">公式RT除く</label>
+		    </div>
+		    <div id="tweetWordExclude" class="tweetSearchCheck" style="margin-top: 0px;">
+		      	<label>除外ワード</label>
+  				<input id="tweetExcludeKeyword" type="text" placeholder="複数の場合は、スペースで区切ってください">
+		    </div>
+		</div>  
+		<div class="tweetSearchBody" style="display: none;">
+			<div class="tweetSearchBodyHead">
+				<div style="display: inline-block;">
+					<p class="tweetSearchBodyHeadTextL01">検索結果</p>
+				</div>
+				<div class="tweetSearchBodyHeadTextR01">
+					<span>追加したツイート</span>
+					<span class="tweetSearchCount">
+						<span class="tweetSearchCountInner">0</span>
+					</span> 
+					<span>件</span>
+				</div>
+			</div>
+			<div class="tweetSearchBodyContent">
+				<ul class="tweetSearchList">
+												
+				</ul>
+				<input id="tweetPage" type="hidden" value="">
+				<input id="tweetType" type="hidden" value="">
+				<p class="tweetSearchMore">
+					<span class="tweetSearchMore01">
+						<a id="tweetMore" class="tweetSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+						<span id="tweetMoreLoading" class="tweetSearchMoreLoading" style="display: none;">読み込み中</span>
+					</span>						
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div id="thumbSearchPopUp">
+		<div class="imageSearchHeader">
+	  		<span>画像を探す</span>
+  			<input id="thumbKeyword" type="text" placeholder="キーワードを入力">
+  			<input class="btn btn_black" id="btnThumbSearch" type="button" value="検索"/>
+  			<input id="btnImageClose" class="btn btn_default" type="button" value="閉じる">
+  			<input id="thumbKeywordQ" type="hidden">
+		</div>  
+		<div class="imageSearchBody" style="display: none;">
+			<div class="imageSearchBodyHead">
+				<div>
+					<p class="imageSearchBodyHeadTextL01">検索結果</p>
+				</div>
+			</div>
+
+			<div class="imageSearchBodyContent" >
+				<ul id="thumbSearchList" class="imageSearchList">
+										
+				</ul>
+				<input id="thumbPage" type="hidden" value="">
+				<p class="thumbSearchMore">
+					<span class="imageSearchMore01">
+						<a id="thumbMore" class="imageSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+						<span id="thumbMoreLoading" class="imageSearchMoreLoading" style="display: none;">読み込み中</span>
+					</span>						
+				</p>
+			</div>
+		</div>
+	</div>
+	
+	<div id="videoSearchPopUp">
+		<div class="videoSearchHeader">
+	  		<span>動画を探す</span>
+  			<input id="videoKeyword" type="text" placeholder="動画を検索するキーワードを入力">
+  			<input class="btn btn_black" id="btnVideoSearch" type="button" value="検索"/>
+  			<input id="btnVideoClose" class="btn btn_default" type="button" value="閉じる">
+  			<input id="videoKeywordQ" type="hidden" value="">
+		</div>  
+		<div id="videoSearchTab" style="display: none">
+			<div class="videoSearchBody">
+				<div class="videoSearchBodyHead">
+					<div>
+						<p class="videoSearchBodyHeadTextL01">検索結果</p>
+					</div>
+					<div class="videoSearchBodyHeadTextR01">
+						<span class="videoSearchPoweredBy">
+							<a href="http://www.google.com/" target="_blank">
+							<img src="<?php echo $this->_tpl_vars['ADMIN_URL_IMAGES']; ?>
+/img_poweredbygoogle.png" alt="Powered by Google" class="videoSearchPoweredByView"></a>
+							<span class="videoSearchSeparator">|</span>
+						</span>
+						<span>追加した画像</span>
+						<span class="videoSearchCount">
+							<span class="videoSearchCountInner">0</span>
+						</span> 
+						<span>件</span>
+					</div>
+				</div>
+				<ul>
+					<li><a href="#tab-google">Google</a></li>
+				    <li><a href="#tab-youtube">Youtube</a></li>
+				</ul>
+				<div id="tab-google" class="videoSearchBodyContent">
+					<ul id="googleList" class="videoSearchList">
+											
+					</ul>
+					<input id="googPage" type="hidden" value="">
+					<p class="videoSearchMore">
+						<span class="videoSearchMore01">
+							<a id="googMore" class="videoSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+							<span id="googMoreLoading" class="videoSearchMoreLoading" style="display: none;">読み込み中</span>
+						</span>						
+					</p>
+				</div>
+				
+				<div id="tab-youtube" class="videoSearchBodyContent">
+					<ul id="youtubeList" class="videoSearchList">
+										
+					</ul>
+					<input id="youtuPageToken" type="hidden" value="">				
+					<p class="videoSearchMore">
+						<span class="videoSearchMore01">
+							<a id="youtuMore" class="videoSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+							<span id="youtuMoreLoading" class="videoSearchMoreLoading" style="display: none;">読み込み中</span>
+						</span>				
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	
+<div id="imgSearchPopUp" >
+	<div class="imgSearchContent clearfix">
+		<div class="imgSearchNavLeft">
+			<h1 class="imgSearchNavLeftTtl">画像を探す</h1>
+			<div>
+				<ul class=imgSearchNavLeftView>
+					<li class="imgSearchNavItem" style="display: list-item;">
+						<span id="imgTabTabelog" title="食べログ">食べログ</span>
+					</li>
+					<li class="imgSearchNavItem" style="display: list-item;">
+						<span id="imgTabGoogle" title="Google">Google</span>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<div class="imgSearchRight">						
+			<div class="imgSearchHeader" style="display: none;">
+				<div class="imgSearchBox">
+					<input id="imageKeyword" type="text" placeholder="キーワードを入力">
+		  			<input class="btn btn_black" id="btnImgSearch" type="button" value="検索"/>
+		  			<input id="imageKeywordQ" type="hidden">
+				</div>
+	  			
+	  			<p class="imgSearchStatus">
+					<span>追加した画像</span>
+					<span class="imageSearchCount">
+						<span class="imageSearchCountInner">0</span>
+					</span> 
+					<span>件</span>
+				</p>
+			</div>  
+			<div id="imgSearchTab" class="imgSearchResult" style="display: none;">
+				<div id="imgTabGoogleContent" class="imgSearchResultBody" style="display: none;">
+					<ul id="imgSearchList" class="imageSearchList">
+											
+					</ul>
+					
+					<input id="imgPage" type="hidden" value="">					
+					<p class="imageSearchMore" style="display: none;">
+						<span class="imageSearchMore01">
+							<a id="imgGoogMore" class="imageSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+							<span id="imgGoogMoreLoading" class="imageSearchMoreLoading" style="display: none;">読み込み中</span>
+						</span>						
+					</p>
+				</div>
+				
+				<div id="imgTabTabelogContent" class="imgSearchResultBody" style="display: none;">
+					<ul id="imageTabelogList" class="imageSearchList">
+									
+					</ul>
+					<input id="imgTabelogPage" type="hidden" value="">
+					<p class="imageSearchMore" style="display: none;">
+						<span class="imageSearchMore01">
+							<a id="imgTabelogMore" class="imageSearchMore01Btn" href="javascript:void(0)">もっと見る</a>
+							<span id="imgTabelogMoreLoading" class="imageSearchMoreLoading" style="display: none;">読み込み中</span>
+						</span>						
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<p class="imgSearchHeaderClose">
+		<span id="btnImgClose" title="閉じる" class="imgSearchHeaderClsBtn">x</span>
+	</p>
+</div>	

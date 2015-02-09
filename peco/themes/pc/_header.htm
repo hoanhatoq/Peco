@@ -1,0 +1,31 @@
+<header id="header">
+	<div class="inner1000 clearfix">
+			<h1 class="logo"><a href="{$clsRewrite->url_home()}" title="PECO [メリー]"><img alt="PECO [メリー]" src="{$URL_IMAGES}/logo.png"></a></h1>
+			<form method="get" id="fSearch" class="search_form" action="" accept-charset="UTF-8">
+				<input type="text" placeholder="大好きなペットを探そう！" name="q" id="q" class="query"><input type="submit" value="" class="submit">
+			</form>
+			{if $core->isLoggedIn()==1}
+			<ul class="top_nav clearfix">
+				<li>
+					<a href="{$clsRewrite->url_mypage()}">
+						<img width="20" height="20" src="{if $core->_USER.icon ne ""}{$URL_ICON}/{$core->_USER.icon}{else}{$URL_IMAGES}/noimage_person.png{/if}" alt="Noimage_person" class="img">
+						{$core->_USER.name}
+					</a>
+				</li>
+				<li><a href="{$clsRewrite->url_createpost()}">まとめを作る</a></li>
+				<li><a href="javascript:void(0);" onclick="return toggleSetting();">設定</a>
+					<ul class="nav_sub" id="nav_sub_setting">
+						<li><a href="{$clsRewrite->url_setting()}">プロフィール編集</a></li>
+						<li><a href="{$clsRewrite->url_logout()}">ログアウト</a></li>
+					</ul>
+				</li>
+			</ul>
+			{else}
+			<ul id="non_login_user_header_menu" class="top_nav clearfix">
+        <li><a href="{$clsRewrite->url_createpost()}">まとめを作る</a></li>
+        <li><a href="{$clsRewrite->url_signup()}">無料会員登録</a></li>
+        <li><a href="{$clsRewrite->url_signin()}">ログイン</a></li>
+      </ul>
+			{/if}
+	</div>
+</header>

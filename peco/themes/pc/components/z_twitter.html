@@ -1,0 +1,22 @@
+<div data-item-id="{$articleItemId}" class="article_content" id="item{$articleItemId}">
+	<div class="tweet clearfix">
+	  	<a target="_blank" href="javascript:void(0)">
+	  		<img src="{$avatar}" class="icon tweet_icon" alt="">
+	  	</a>
+	  	<div class="tweetInfo">
+		    <a target="_blank" href="javascript:void(0)">
+		      <p class="user">{$fullname}<span>@{$username}</span></p>
+		    </a>
+		    <p>
+			{$content}
+			</p>
+			<p class="comment">{$comment}</p>
+			{if $imgSrc ne ""}
+			<a href="{$imgTarget}">
+			  <p class="image"><img src="{$imgSrc}" class="tweet_image" alt=""></p>
+			</a>
+			{/if}
+			<p class="time">{$time}</p>
+		</div>
+	</div>
+</div>

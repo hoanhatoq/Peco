@@ -1,0 +1,462 @@
+@charset "utf-8";
+* {margin: 0; padding: 0; outline:none;}
+body {
+	background: #FFFFFF;
+	font-family: Tahoma, Arial, Helvetica, sans-serif;
+	font-size:12px;
+	margin:0px 0px 40px 0px;
+	padding:0px;
+}
+.clearfix, .clear { *zoom: 1; }
+.clearfix:after, .clear:after { content: "."; display: block; clear: both; height: 0; visibility: hidden; }
+.fright{
+	float:right;
+}
+.fleft{
+	float:left;
+}
+a, a:visited{
+	color:#0000FF;
+	text-decoration:none;
+}
+a:hover{
+	text-decoration:underline;
+}
+/*LINK EDIT*/
+a.linkEdit {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size: 11px;
+}
+a.linkEdit:link, a.linkEdit:visited {
+	text-decoration: none;
+	color: #003399;
+}
+a.linkEdit:hover {
+	text-decoration: underline;
+	color: #003399;
+}
+a.linkEdit:active {
+	text-decoration: none;
+	color: #003399;
+}
+select{
+	border:1px #bdc3c7 solid;
+	padding:2px 3px;
+	margin:0px;
+	outline:none;
+	font-size:12px;
+	color:#666666;
+}
+input[type='text'], input[type='password']{
+	border:1px #bdc3c7 solid;
+	padding:2px 2px 3px;
+	margin:0px;
+	outline:none;
+}
+input[type='submit'], input[type='button']{
+	background:#F0F0F0;
+	border:1px #CCCCCC solid;
+	color:#666666;
+	padding:2px 8px;
+	font-weight:bold;
+	cursor:pointer;
+	min-width:40px;
+}
+	input[type='submit']:hover, input[type='button']:hover{
+		background:#E2E2E2;
+		border:1px #999999 solid;
+		color:#000000;
+	}
+
+.button{
+	cursor:pointer;
+	background:#F0F0F0;
+	border:1px #CCCCCC solid;
+	padding:2px 8px;
+	margin:0px 0px 0px 0px;
+	color:#333333;
+	font-size:13px;
+	min-width:60px;
+	text-decoration:none;
+	font-weight:bold;
+}
+.button:visited{
+	color:#333333;
+}
+	a.button{		
+		font-size:14px;
+		display: inline-block;
+		vertical-align: top;
+	}
+	.button img{
+		vertical-align:middle;
+	}
+.button:hover, .button_select{
+	background:#E2E2E2;
+	border:1px #999999 solid;
+	color:#000000;
+	text-decoration:none;
+}
+.button_select{
+	font-weight:bold;
+}
+	.button:hover img, .button_select:hover img{
+		filter: url("../images/grayscale.svg#greyscale");
+		filter: gray;		
+		-webkit-filter: grayscale(100%);		
+		-moz-filter: grayscale(100%);		
+		-ms-filter: grayscale(100%);		
+		-webkit-filter: grayscale(100%);		
+		-o-filter: grayscale(100%);
+	}
+input.button{
+	font-weight:normal;
+}
+.inner_head_title{
+	border-bottom:1px #CCCCCC solid;
+}
+	.inner_head_title .title1{
+		font-size:24px; 
+		text-transform:uppercase;
+	}
+	inner_head_title .title2{
+		font-size:10px; 
+		font-style:italic;
+	}
+.navpath{
+	padding-bottom:5px;
+}
+
+/*Navigation*/
+.navi{
+	border-top:1px #000000 solid; 
+	border-bottom:1px #B9B9B9 solid; 
+	height:24px;
+	font-size:11px;
+	background-color:#E6E6E6
+}
+.navi a{
+	color:#000000;
+	font-weight:bold;
+	text-decoration:none;
+}
+.navi a:hover{
+	color:#0000FF;
+	
+}
+
+/*Section*/
+.jpsection{
+	margin: 10px;
+}
+	.jpsection h2{
+		background: url("../images/bullet.gif") no-repeat top left;
+		background-position: 0px 5px;
+		padding-left: 30px;
+		padding-bottom: 5px;
+		font-size: 16px;
+	}
+	.jpsection ul{
+		padding-left: 40px;
+		list-style: square;
+	}
+		.jpsection ul li{
+			line-height: 1.5;
+			margin-top: 5px;
+		}
+/*===============================================================*/
+.menubutton, .submenubutton, .menubuttonActive{
+	padding:5px;
+	font-size:13px;
+	cursor:pointer;
+	text-decoration:none;
+	text-transform:uppercase;
+}
+.menubutton{
+	color:#D1D6E7; 
+	border-top:1px #F0F0F0 solid; 
+	border-left:1px #F0F0F0 solid; 
+	border-right:1px #D1D6E7 solid; 
+	border-bottom:1px #D1D6E7 solid; 
+	filter: url("../images/grayscale.svg#greyscale");
+	filter: gray;		
+	-webkit-filter: grayscale(50%);		
+	-moz-filter: grayscale(50%);		
+	-ms-filter: grayscale(50%);		
+	-webkit-filter: grayscale(50%);		
+	-o-filter: grayscale(50%);
+}
+.menubuttonActive{
+	color:#F0F0F0;
+	border-top:1px #D1D6E7 solid; 
+	border-left:1px #D1D6E7 solid; 
+	border-right:1px #F0F0F0 solid; 
+	border-bottom:1px #F0F0F0 solid; 
+}
+.submenubutton{
+	color:white; 
+}
+/* These are the style specifications for the menu layers.  
+   Set width to get more browsers corporation  */
+div.menu  { 
+  position:absolute; visibility:hidden; 
+  min-width:152px;
+  left:0; 
+  top:0; 
+  z-index:500; 
+  font-size:12px; 
+  color:#FFFFFF;
+}
+/* Style specifications for menu items and links  */
+div.menu ul {
+	margin:0px; 
+	padding:0 px;
+}
+/* Need to set padding of at least one pixel or ie sets very large margin */
+div.menu ul li { 
+  margin:0;
+  list-style-type:none
+}
+/* Set display block and position relative so clicks on list items activate links  */  
+div.menu a { 
+  cursor:pointer;
+  padding:0.7em .4em; 
+  margin:0; 
+	background:#666666;
+  display:block; 
+	position:relative; 
+  text-decoration:none;
+  color:#D1D6E7;
+  border-left:2px solid #666666;
+}
+div.menu a:visited { 
+	color:#D1D6E7; 	
+}
+div.menu a:hover { 
+	color:#F0F0F0; 	
+	border-left:2px #FFFFFF solid; 
+	border-right:0px #FFFFFF solid; 
+}
+.tdlargeicon{
+	border-top:1px #FFFFFF solid; 
+	border-left:1px #FFFFFF solid; 
+	border-right:1px #FFFFFF solid; 
+	border-bottom:1px #FFFFFF solid; 
+	width: 100px;
+	color:#666666;
+}
+.tdlargeiconActive{
+	border-top:1px #CCCCCC solid; 
+	border-left:1px #CCCCCC solid; 
+	border-right:1px #999999 solid; 
+	border-bottom:1px #999999 solid;
+	cursor:pointer;
+	width: 100px;
+	color:#000000;
+}
+/*
+Button
+*/
+.buttonfunc{
+	border-top:#999999 1px solid;
+	border-left:#999999 1px solid;
+	border-right:#CCCCCC 1px solid;
+	border-bottom:#CCCCCC 1px solid;
+	width:70px;
+	font-weight:bold;
+	font-size:11px;
+	text-align:center;
+}
+.buttonfunc_off{
+	border-top:#999999 1px solid;
+	border-left:#999999 1px solid;
+	border-right:#CCCCCC 1px solid;
+	border-bottom:#CCCCCC 1px solid;
+	width:70px;
+	color:#999999;
+	font-size:11px;
+	text-align:center;
+}
+
+.buttonfunc_on{
+	border-top:#CCCCCC 1px solid;
+	border-left:#CCCCCC 1px solid;
+	border-right:#999999 1px solid;
+	border-bottom:#999999 1px solid;
+	width:70px;
+	cursor:pointer;
+	font-weight:bold;
+	font-size:12px;
+	text-align:center;
+	background-color:#F0F0F0;
+}
+
+.activetxt{
+	font-size:12px;
+}
+
+.blurimg{
+	filter: alpha(opacity=30);
+	opacity:0.3;
+}
+.blurtxt{
+	color:#999999;
+	font-size:12px;
+}
+#btnSearch{/*type=submit*/
+	background:url("../images/icon/search20.png") no-repeat center;
+	min-width:30px;
+}
+/*
+Data Grid
+*/
+.gridtable{
+	border-top:#CCCCCC 1px solid;
+	border-bottom:#CCCCCC 1px solid;
+	border-left:#CCCCCC 1px solid;
+	border-right:#CCCCCC 1px solid;
+}
+.gridtable a{
+	text-decoration:none;
+}
+.gridtable tr:hover{
+	background:#FFFFCC;
+}
+.gridtable tr td tr:hover{
+	background:none;
+}
+.gridtable td{
+	padding:3px;
+}
+.gridtable input[type='text'], .gridtable input[type='password']{
+	width:94%;
+	color:#666666;
+}
+.gridheader, .gridheader1{
+	border-bottom:1px #E2E2E2 solid;
+	border-right:1px #CCCCCC solid;
+	font-weight:bold;
+	font-size:12px;
+	padding-left:2px;
+	padding-right:2px;
+	background:#F0F0F0;
+	height:24px;
+}
+.gridheader1{
+	border-right:0px;
+}
+
+.gridrow, .gridrow1, .gridrow2, .gridrow3{
+	padding-left:2px;
+	padding-right:2px;
+	font-size:12px;
+	height:22px;
+	border-right:1px #CCCCCC dotted;
+	border-bottom:1px #CCCCCC dotted;
+}
+.gridrow1{
+	border-right: 0px;
+}
+.gridrow2{
+	border-bottom:0px;
+}
+.gridrow3{
+	border-right: 0px;
+	border-bottom:0px;
+}
+#footer{
+	position:fixed;
+	bottom:0px;
+	background-color:#E6E6E6;
+	border-top:1px #B9B9B9 solid; 
+	line-height:16px;
+	font-size:11px;
+	color:#666666;
+	width:100%;
+}
+/*color*/
+.red{color:#FF0000;}
+.blue{color:#0000FF;}
+.black{color:#000000;}
+.grey{color:#333333}
+.line-through{text-decoration:line-through}
+
+.jpform{
+	margin: 20px 0px 0px;
+}
+.jpform .row{
+	margin-bottom: 8px;
+}
+.jpform .row:after{
+	 content: "."; display: block; clear: both; height: 0; visibility: hidden; 
+}
+	.jpform .row label{
+		float: left;
+		display:inline-block;
+		vertical-align: middle;
+		width:160px;
+	}
+	.jpform .row .input{
+		float: left;
+		display: inline-block;
+	}
+		.jpform .row input[type='text'], .jpform .row input[type='password'], .jpform .row input[type='number'], .jpform .row input[type='email'], .jpform .row input[type='url'], .jpform .row input[type='date'],  .jpform .row textarea{
+			width:300px;
+			padding:5px;
+		}
+		.jpform .row input[type='submit']{
+			font-weight: bold;
+			font-size:14px;
+		}
+		.jpform .row .error{
+			color: red;
+		}
+		.jpform .row input.error, .jpform .row textarea.error{
+			border:1px solid #FF0000;
+		}
+		.jpform .row label.error{
+			float: none;
+			clear:both;
+			display: block;
+			width:auto;
+		}
+
+.divtable h3{
+	margin: 10px 0px;
+}
+.divtable{
+	display: table;
+	width:100%;
+	height:100%;
+}
+.divtable p{
+	display: table-row;
+	width: 100%;
+	margin:5px 0px;
+}
+.divtable span{
+	display: table-cell;
+}
+		
+.validate_message {
+	display: block;
+	margin: 5px 0 0;
+	padding: 0;
+	background: none;
+	color: #FF0000!important;
+	font-size: 11px;
+	letter-spacing: normal;
+}
+.resizeAndCrop{/*div contain img*/	
+	position: absolute;
+	text-align: center;
+	overflow: hidden;
+}	
+
+.mgT10{margin-top:10px;} .mgT20{margin-top:20px;}
+.mgR10{margin-right:10px;} .mgR20{margin-right:20px;}
+.mgB10{margin-bottom:10px;} .mgB20{margin-bottom:20px;}
+.mgL10{margin-left:10px;} .mgL20{margin-left:20px;}
+hr{border:0px;border-bottom:1px solid #dddddd;}
+.text-left{text-align: left;} .text-right{text-align:right;}
+.grey{color:#888888}

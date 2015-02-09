@@ -1,0 +1,25 @@
+{include file="_block_inner_head.html"}
+<form name="theForm" action="" method="post">
+<table width="100%" border="0">
+<tr>
+<td style="padding:10px">
+	<h1 class="fleft">{$core->getLang("Articles_List")}</h1>
+	<div class="fright">
+	キーワード	<input type="text" name="s_keyword" value="{$smarty.post.s_keyword}">
+	記事id <input type="text" name="s_article_id" value="{$smarty.post.s_article_id}">
+	<input type="submit" name="btnSearch" value="検索" class="button">
+	</div>
+</td>
+</tr>
+<tr>
+	<td style="padding:0px 10px" width="100%" valign="top">
+	{$clsDataGrid->showDataGrid("theForm")}
+	</td>
+</tr>
+<tr>
+	<td  style="padding:0px 10px">
+	{$clsDataGrid->showPaging("theForm")}
+	</td>
+</tr>
+</table>
+</form>

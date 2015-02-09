@@ -1,0 +1,71 @@
+{assign var="span_title1" value=$core->getLang("Features")}
+{assign var="span_title2" value=$core->getLang("Features_Management")}
+{include file="_block_inner_head_add.html"}
+<form action="" method="post" style="padding:10px" name="theForm" id="theForm" accept-charset="UTF-8" enctype="multipart/form-data">
+<h1>{$core->getLang("Category_Add_Edit")}</h1>
+<div class="jpform fleft mgR20">
+	<div class="row">
+		<label>Title (*)</label>
+		<div class="input"><input type="text" name="title" id="title" value="{$smarty.post.title}" required >
+		{if $errors.title ne ""}<div class="validate_message">{$errors.title}</div>{/if}
+		</div>		
+	</div>
+	<div class="row">
+		<label>Short Title (*)</label>
+		<div class="input"><input type="text" name="short_title" id="short_title" value="{$smarty.post.short_title}" required >
+		{if $errors.short_title ne ""}<div class="validate_message">{$errors.short_title}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>Summary (*)</label>
+		<div class="input"><textarea name="summary" id="summary" rows="8" required>{$smarty.post.summary}</textarea>
+		{if $errors.summary ne ""}<div class="validate_message">{$errors.summary}</div>{/if}
+		</div>
+	</div>
+	<div class="row">
+		<label>Catch</label>
+		<div class="input"><textarea name="catch" id="catch" rows="8">{$smarty.post.catch}</textarea></div>
+	</div>
+	<div class="row">
+		<label>Priority (*)</label>
+		<div class="input"><input type="number" name="priority" id="priority" value="{$smarty.post.priority|default:'1'}" required ></div>
+	</div>
+	<div class="row">
+		<label>Disabled (*)</label>
+		<div class="input"><input type="number" name="disabled" id="disabled" value="{$smarty.post.disabled|default:'0'}" required ></div>
+	</div>
+	<div class="row">
+		<label>&nbsp;</label>
+		<div class="input">
+		<input type="hidden" name="id" value="{$smarty.post.id}">
+		<input type="hidden" name="old_short_title" value="{$smarty.post.old_short_title}">
+		<input type="hidden" name="old_thumbnail" value="{$smarty.post.old_thumbnail}">
+		<input type="submit" name="btnSave" value="&nbsp;&nbsp;&nbsp; 保存  &nbsp;&nbsp;">
+		<a href="?mod={$mod}" class="button">&nbsp;&nbsp;&nbsp;キャンセル&nbsp;&nbsp;&nbsp;</a>
+		</div>
+	</div>
+</div>
+<div class="jpform fleft mgL20">
+	<div class="row">		
+		<div class="input">
+		Thumbnail Image<br><br>
+		<div style="position: relative; height:160px;">
+		<div class="resizeAndCrop" style="width:160px; height:160px;"><img src="{if $smarty.post.old_thumbnail ne ''}{$URL_UPLOADS}/{$smarty.post.old_thumbnail}{else}{$ADMIN_URL_IMAGES}/noimage.png{/if}" width="100%" height="auto" id="img_thumbnail"></div>
+		</div>
+		<br><br>
+		<input type="file" name="thumbnail" value="" onchange="setPreviewAvatar(this, '#img_thumbnail');">
+		<!-- <input type="hidden" name="thumbnail_base64" id="thumbnail_base64" value=""> -->
+		</div>
+	</div>
+</div>
+<div class="clearfix"></div>
+</form>
+{literal}
+<script>
+$("#theForm").validate({
+	submitHandler: function(form) {
+		form.submit();
+	}
+});
+</script>
+{/literal}

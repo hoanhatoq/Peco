@@ -1,0 +1,105 @@
+<!--Begin sidebar-->
+<!--<div class="ads300">
+<img src="{$URL_IMAGES}/ads300x250.jpg" />
+</div>-->
+<div class="widget">
+	<div class="widget_title clearfix"><h2>デイリーランキング</h2></div>
+	<!--Begin Post Listing-->
+	<div class="post_list">
+		{foreach key=k item=article from=$arrListTopDaily}
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="{$clsRewrite->url_postdetail($article.id)}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/>
+			<img alt="1位" src="{$URL_IMAGES}/icon_rank{$k+1}.png" class="icon_rank">
+			</a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="{$clsRewrite->url_postdetail($article.id)}">{$article.title}</a></p>
+				<span>by {$article.username}</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		{/foreach}
+	</div>
+	<!--End Post Listing-->
+</div>
+{*<div class="widget">
+	<div class="widget_title clearfix"><h2>おすすめの特集</h2><p>一覧をみる！</p></div>
+	<!--Begin Post Listing-->
+	<div class="post_list">
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="#"><img src="{$URL_IMAGES}/thumb1.jpg" alt="" class="img"/></a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="">10年愛用しているもの、いくつある？</a></p>
+				<span>ずうっと長持ちさせるコツ ずうっと長持ちさせるコツ</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="#"><img src="{$URL_IMAGES}/thumb2.jpg" alt="" class="img"/></a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="">10年愛用しているもの、いくつある？ずうっと長持ちさせるコツ</a></p>
+				<span>ずうっと長持ちさせるコツ ずうっと長持ちさせるコツ</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="#"><img src="{$URL_IMAGES}/thumb3.jpg" alt="" class="img"/></a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="">10年愛用しているもの、いくつある？ずうっと長持ちさせるコツ</a></p>
+				<span>ずうっと長持ちさせるコツ ずうっと長持ちさせるコツ</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="#"><img src="{$URL_IMAGES}/thumb1.jpg" alt="" class="img"/></a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="">10年愛用しているもの、いくつある？ずうっと長持ちさせるコツ</a></p>
+				<span>ずうっと長持ちさせるコツ ずうっと長持ちさせるコツ</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="#"><img src="{$URL_IMAGES}/thumb2.jpg" alt="" class="img"/></a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="">10年愛用しているもの、いくつある？ずうっと長持ちさせるコツ</a></p>
+				<span>ずうっと長持ちさせるコツ ずうっと長持ちさせるコツ</span>
+			</div>
+		</div>
+		<!--End One Post-->
+	</div>
+	<!--End Post Listing-->
+</div>
+*}
+<div class="widget">
+	<div class="widget_title clearfix"><h2>おすすめのまとめ</h2><p>一覧をみる！</p></div>
+	<!--Begin Post Listing-->
+	<div class="post_list">
+		{foreach key=k item=article from=$arrListRecommendList}
+		<!--Begin One Post-->
+		<div class="one_post clearfix">
+			<div class="thumb"><a href="{$clsRewrite->url_postdetail($article.id)}"><img src="{if $article.thumbnail_path ne ''}{$URL_ARTICLES}/{$article.thumbnail_path}{else}{$URL_IMAGES}/noimage.png{/if}" alt="" class="img"/>
+			</a></div>
+			<div class="text">
+				<p class="post_title clearfix"><a href="{$clsRewrite->url_postdetail($article.id)}">{$article.title}</a></p>
+				<span>by {$article.username}</span>
+			</div>
+		</div>
+		<!--End One Post-->
+		{/foreach}
+	</div>
+	<!--End Post Listing-->
+</div>
+<div class="widget widget_topic">
+	<div class="widget_title clearfix"><h2>人気のトピックス</h2><p>一覧をみる！</p></div>
+	<ul>
+		{foreach key=k item=topic from=$arrListTopics}
+		<li class="tag"><a href="{$clsRewrite->url_topic($topic)}">{$topic.name} ({$topic.total_article})</a></li>
+		{/foreach}
+	</ul>
+</div>
+<!--End sidebar-->

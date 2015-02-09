@@ -1,0 +1,16 @@
+<div data-item-id="{$articleItemId}" class="article_content clearfix" id="item{$articleItemId}">
+
+<p class="link">
+	<a href="{$siteTitleTarget}" target="_blank">{$siteTitle}</a>
+</p>
+<p class="ref clearfix">
+{if $siteThumb ne ""}
+<a target="_blank" href="{$siteThumbTarget}">
+	<img src="{$siteThumb}" width="150" align="left" style="margin-right:10px">
+</a>
+{/if}
+{$siteDesc}
+</p>
+<p class="text">{$siteComment}</p>
+
+</div>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Login | PECO Control Panel</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel="stylesheet" type="text/css" href="{$ADMIN_URL_CSS}/login.css" />
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>Admin Area <strong>PECO</strong> <sup>&copy;{$smarty.now|date_format:"%Y"}</sup></h1>
+		<nav class="codrops-demos">
+			<a href="{$URL_CMS}/admin">Login here</a>
+		</nav>
+  </header>
+  <section class="main">		
+		{if $isValid eq 0}
+		<div style="text-align:center; color:red">Login fail, please try again!</div>			
+		{/if}
+    <form class="form-3" action="" method="post" name="frmLogin" id="frmLogin">						
+      <p class="clearfix">
+        <label for="txtUsername">ユーザー名</label>
+        <input type="text" name="txtUsername" id="txtUsername" placeholder="英数字およびアンダーバーで入力" value="{$txtUsername}" maxlength="32">
+      </p>
+      <p class="clearfix">
+        <label for="txtPassword">パスワード</label>
+        <input type="password" name="txtPassword" id="txtPassword" placeholder="半角6文字以上" value="{$txtPassword}" autocomplete='off'>
+      </p>
+      <p class="clearfix">
+        <input type="checkbox" name="remember" id="remember">
+        <label for="remember">ログイン状態を保存</label>
+      </p>
+      <p class="clearfix">
+        <input type="submit" name="btnLogin_x" value="ログインする">
+      </p>
+    </form>
+  </section>
+</div>
+<script>document.frmLogin.txtUsername.focus();</script>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$clsRewrite->url_mypage()}"><span itemprop="title">{$core->_USER.name}さんのマイページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">アカウント情報の編集</strong></li>
+    </ul>
+  </div>
+	{assign var=current_user_name value=$core->_USER.name}
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 magT20 clearfix">
+		<div id="main">
+			<!--Begin main-->
+			<h2 class="h2 clearfix">プロフィールを編集する</h2>
+			<div class="edit_user">
+				<form action="" method="post" id="fSetting" accept-charset="UTF-8" enctype="multipart/form-data">
+				<div class="field">
+					<label for="email">メールアドレス</label>
+					<input type="hidden" name="user_id" value="{$core->_USER.id}" />
+					<input type="hidden" name="old_email" value="{$core->_USER.email}" />
+					<input type="text" value="{$smarty.post.email}" size="30" placeholder="メールアドレス" name="email" id="email">
+					{if $errors.email ne ""}<span class="validate_message">{$errors.email}</span>{/if}
+				</div>
+				<div class="field">
+					<label>プロフィール画像</label>
+					<img width="120" height="120" src="{if $smarty.post.icon1}{$URL_ICON}/{$smarty.post.icon1}{else}{$URL_IMAGES}/noimage_person.png{/if}" alt="Avatar" id="pre_avatar">
+					<input type="file" name="icon" id="icon" onChange="setPreviewAvatar(this, 'pre_avatar');" >
+					{if $errors.icon ne ""}<span class="validate_message">{$errors.icon}</span>{/if}
+				</div>
+				<div class="field">
+					<label for="account_name">アカウント名</label>
+					<input type="text" value="{$smarty.post.account_name}" size="30" placeholder="日本語も使えます" name="account_name" id="account_name">
+					{if $errors.account_name ne ""}<span class="validate_message">{$errors.account_name}</span>{/if}
+				</div>
+				<div class="field">
+					<label for="introduction">自己紹介</label>
+					<textarea rows="10" placeholder="自己紹介を入力してください（500字以内）" name="introduction" id="introduction" cols="40">{$smarty.post.introduction}</textarea>
+					{if $errors.introduction ne ""}<span class="validate_message">{$errors.introduction}</span>{/if}
+				</div>
+				<div class="field">
+					<label for="introduction_url">外部サイトURL</label>
+					<input type="text" value="{$smarty.post.introduction_url}" size="30" placeholder="facebook、twitter、アメブロ、ご自分のホームページなどのURL" name="introduction_url" id="introduction_url">
+					{if $errors.introduction_url ne ""}<span class="validate_message">{$errors.introduction_url}</span>{/if}
+				</div>
+				<button type="submit" name="btnSubmit" value="Setting" class="btn-primary-red btn-large magB10">ログインする</button>
+				<!-- <hr class="magB20" />	
+				<button type="submit" name="btnSubmit" value="Withdraw" class="btn-primary-grey btn-large magB10">アカウントの削除</button> -->
+				</form>
+			</div>
+			<!--End main-->
+		</div>
+		<div id="sidebar">
+			{include file="_sidebar.htm"}
+		</div>
+	</div>
+</div>

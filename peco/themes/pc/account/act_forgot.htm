@@ -1,0 +1,37 @@
+<section id="topBar">
+  <div class="inner1000 clearfix">
+    <ul class="breadcrumb">
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><a itemprop="url" href="{$URL_CMS}"><span itemprop="title">トップページ</span></a></li>
+      <li itemtype="http://data-vocabulary.org/Breadcrumb" itemscope=""><strong itemprop="title">パスワード再設定</strong></li>
+    </ul>
+  </div>
+</section>
+<div id="wrap" class="clearfix">
+	<div class="inner1000 clearfix">
+		<div class="loginbox">
+			<h2 class="magB10">パスワードの再設定</h2>
+			<hr class="magB20" />
+			<div class="magB20 clearfix">
+				<!--Begin ForgotForm-->
+				<form action="" method="post" id="fForgot">
+					<div class="form-input">
+						こちらのアドレス宛にパスワード再設定のご案内が届きますので、 メール内のリンクから再設定ページへとお進みください。
+					</div>
+					<div class="form-input">
+						<label>メールアドレス</label>
+						<input type="text" placeholder="有効なメールアドレスを入力" name="email" id="email1" value="{$smarty.post.email}" class="input-large input-sign" autofocus="autofocus" autocomplete="off">
+						{if $errors.email ne ""}<span class="validate_message">{$errors.email}</span>{/if}
+					</div>
+					<div class="text-center">
+						<button type="submit" name="btnSubmit" value="Forgot" class="btn-primary-red btn-large magB10">メールを送信</button>
+					</div>
+				</form>
+				<!--End ForgotForm-->
+			</div>
+			<hr class="magB20" />
+			<div class="text-center">
+			<a href="#facebook" class="btn-signin-facebook">Facebookでログインする</a>
+			</div>
+		</div>
+	</div>
+</div>
